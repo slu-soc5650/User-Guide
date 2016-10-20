@@ -1,0 +1,518 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={SOC 4650/5650 Users Guide},
+            pdfauthor={Christopher Prener, Ph.D.},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{SOC 4650/5650 Users Guide}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Christopher Prener, Ph.D.}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{2016-10-20}
+
+\usepackage{booktabs}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter*{Preface}\label{preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+This text is a companion document for \textbf{SOC 4650/5650 -
+Introduction to Geographic Information Sciences}. It is designed to help
+you be \emph{successful} in this course. The idea behind a course Users
+Guide is to create a reference for many of the intangible, subtle or
+disparate skills and ideas that contribute to being a successful
+researcher. In creating a Users Guide, I draw inspiration from the work
+of Donald Knuth.\footnote{\href{https://en.wikipedia.org/wiki/Donald_Knuth}{Donald
+  Knuth} is the developer of
+  \href{https://en.wikipedia.org/wiki/TeX}{TeX}, a computer typesetting
+  system that is widely used today for scientific publishing in the form
+  of \href{https://en.wikipedia.org/wiki/LaTeX}{LaTeX}. He also
+  established the concept of
+  \href{https://en.wikipedia.org/wiki/Literate_programming}{literatue
+  programming}, which forms the basis of some of the practices we will
+  follow with Stata this semester.} Knuth has discussed his experiences
+in designing new software languages, nothing that the developer of a new
+language
+
+\begin{quote}
+\ldots{}must not only be the implementer and the first large-scale user;
+the designer should also write the first user manual\ldots{} If I had
+not participated fully in all these activities, literally hundreds of
+improvements would never have been made, because I would never have
+thought of them or perceived why they were important\ldots{}
+\end{quote}
+
+While there is nothing particularly new about what I am writing here,
+and I am certainly not developing a new language for computing, the goal
+of the \textbf{Users Guide} remains similar to Knuth's experience.
+However, by distilling some of key elements for making a successful
+transition to being a \emph{professional developer} of knowledge rather
+than a \emph{casual consumer}, I hope to both improve the course
+experience itself and also create an environment that fosters a
+successful learning experience for you.
+
+If you read through the course objectives included in the syllabus, you
+will note that creating maps is only one of them. As much as this is a
+GIS course, it is a course in research methods. We are concerned not
+just with any research methods, but \emph{high quality} research methods
+and the \emph{process} of conducting research.
+
+There is an important distinction to be made between research methods
+and methodology.\footnote{Methodology refers to the \emph{reasons} for
+  implementing a particular approach to research while method refers to
+  the tools used in the research process
+  (\href{https://books.google.com/books?id=Dq05AwAAQBAJ\&lpg=PA24\&dq=student's\%20guide\%20to\%20methodology\&pg=PP1\#v=onepage\&q\&f=false}{Clough
+  and Nutbrown 2012}:25).} Research methods are the mental habits and
+technical practices that make you a successful researcher. Some of the
+skills and techniques that we will discuss this semester are not taught
+as often in graduate programs. Instead, they are often the products of
+``learning the hard way''. These ``habits of mind and habits of method''
+are broadly applicable across methodologies and disciplines.
+
+\chapter{Getting Started}\label{gettingStarted}
+
+Before you begin the semester, there are a number of things that I
+recommend that you do to help set yourself up for success. Before you do
+\emph{anything} else, you should read through the
+\href{}{\textbf{Syllabus}} and the \href{}{\textbf{Reading List}}. Make
+sure you have a good sense of what is \emph{required} for the course. If
+you have questions, bring them to the first day of class!
+
+\section{Prep Your Computer}\label{prep-your-computer}
+
+Before you do anything else for this course, make sure you get your
+computer ready for the work you are about to undertake:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Make sure your operating system is up-to-date. If you are able, I
+  would also recommend upgrading your computer to the most recent
+  release of its operating system that the computer can run.
+\item
+  We'll be sharing computer files throughout the semester, so you should
+  ensure that you have functioning anti-virus software and that it is
+  up-to-date.
+\item
+  You'll also need to download files, so you'll need to make sure you
+  have some free space on your hard drive. If you have less than 10GB of
+  free space, you should de-clutter!
+\item
+  Make sure you know how to access your computer's file management
+  system.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    On macOS, this means being comfortable with Finder.app.
+  \item
+    On Windows, this means being comfortable with Windows Explorer.
+  \end{itemize}
+\end{enumerate}
+
+This of course assumes that you own a computer. Owning a computer is not
+required for this course. All students who are enrolled in SOC 4650 or
+SOC 5650 will be given 24-hour swipe access (\emph{just what you always
+wanted!}) to Morrissey Hall to facilitate access to lab computers.
+
+\section{Create Accounts}\label{create-accounts}
+
+There are two major web services that we will use this semester, and
+you'll need to create accounts for both:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{GitHub} - you can sign-up at
+  \href{https://github.com}{GitHub.com}. Once you've signed up, fill out
+  your profile, set-up
+  \href{https://help.github.com/articles/about-two-factor-authentication/}{two-factor
+  authentication}, and let Chris know (via
+  \href{mailto:prenercg@slu.edu}{email}) what your user name is. Once he
+  has it, he can add you to the
+  \href{https://github.com/slu-soc5650}{SOC 4650/5650} organization.
+\item
+  \textbf{Slack} - you can ask Chris (via
+  \href{mailto:prenercg@slu.edu}{email}) for an invitation to sign-up
+  for our team. Once the sign-up process is complete, you can log-in by
+  going to our team's \href{https://slu-soc5650.slack.com}{Slack site}.
+  Fill out your profile, set-up
+  \href{https://get.slack.help/hc/en-us/articles/204509068-Set-up-two-factor-authentication}{two-factor
+  authentication}, and change your timezone.
+\end{itemize}
+
+\section{Download and Install
+Software}\label{download-and-install-software}
+
+There are a number of software applications that we will use this
+semester. Most of them are free, and I recommend downloading those free
+ones right away. All of these applications are available for macOS and
+Windows.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Atom} - Atom is a flexible, open-source text editor that is
+  produced by GitHub. You can download it from Atom's
+  \href{https://atom.io}{website}.
+\item
+  \textbf{GitHub Desktop} - GitHub makes a desktop client that you can
+  use to easily interact with repositories that are stored on the site.
+  You can download it from GitHub's
+  \href{https://desktop.github.com}{website} after you sign-up for an
+  account there. You'll need that account information to complete the
+  desktop client's set-up process.
+\item
+  \textbf{Slack} - Slack has a number of applications for desktop and
+  mobile operating systems. I recommend downloading Slack on your
+  personal computer, and optionally installing it on your mobile device
+  as well. You can download their desktop applications from their
+  \href{https://slack.com/downloads}{website} and the mobile
+  applications from your App Store.
+\end{itemize}
+
+\subsection*{\texorpdfstring{For Graduate Students
+\emph{only}}{For Graduate Students only}}\label{for-graduate-students-only}
+\addcontentsline{toc}{subsection}{For Graduate Students \emph{only}}
+
+If your computer meets the
+\href{http://desktop.arcgis.com/en/arcmap/10.3/get-started/system-requirements/arcgis-desktop-system-requirements.htm}{operating
+system requirements} for ArcGIS and you think you'd benefit from having
+access to the software at home, let Chris know (via
+\href{mailto:prenercg@slu.edu}{email}).
+
+If you are in the Public and Social Policy Ph.D.~program and your
+computer meets the
+\href{http://www.stata.com/support/faqs/windows/hardware-requirements/}{hardware}
+and
+\href{http://www.stata.com/products/compatible-operating-systems/}{software}
+requirements for Stata, you should consider
+\href{https://www.stata.com/order/new/edu/gradplans/student-pricing/}{purchasing
+it} for yourself. I recommend purchasing a perpetual license for
+Stata/IC. This is the most cost-effective solution for typical students.
+
+\section{Buy Course Materials}\label{buy-course-materials}
+
+\subsection*{Books}\label{books}
+\addcontentsline{toc}{subsection}{Books}
+
+There are three required books for this course:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Brewer, Cynthia. 2015. \emph{Designing Better Maps: A Guide for GIS
+  Users}. Redlands, CA: ESRI Press. ISBN-13: 978-1589484405; List Price:
+  \$59.99; ebook versions available.
+\item
+  Gorr, Wilpen L. and Kristen S. Kurland. 2013. \emph{GIS Tutorial 1:
+  Basic Workbook}. 10.3.x edition. Redlands, CA: ESRI Press. ISBN-13:
+  978-1589484566; List Price: \$79.99; ebook versions available.
+\item
+  Thomas, Christopher and Nancy Humenik-Sappington. 2009. \emph{GIS for
+  Decision Support and Public Policy Making}. Redlands, CA: ESRI Press.
+  ISBN-13: 978-1589482319; List Price: \$24.95.
+\end{enumerate}
+
+There is one additional book that is optional:
+
+\begin{itemize}
+\tightlist
+\item
+  Mitchell, Michael N. 2010. \emph{Data Management Using Stata: A
+  Practical Handbook}. College Station, TX: Stata Press. ISBN-13:
+  978-1597180764; List Price: \$48.00.
+\end{itemize}
+
+Buying Mitchell (2010) is \emph{highly} recommended for graduate
+students who will continue using Stata in the future and those who are
+concerned about the command-line interface. I recommend waiting for a
+week or two before purchasing this.
+
+\subsection*{External Media}\label{external-media}
+\addcontentsline{toc}{subsection}{External Media}
+
+You will need a USB external storage device (either an external hard
+drive or a thumb-style drive) that has at least 20GB of storage
+capacity. This will be used for storing spatial data for this course.
+
+\section{Download Course Data}\label{download-course-data}
+
+Mots of the course data is available for download via Dropbox in a
+single \texttt{.zip} file. If you want, you can let Chris know (via
+\href{mailto:prenercg@slu.edu}{email}) that you'd like to download these
+data before the beginning of the semester. Once you download them,
+extract the data from the \texttt{.zip} file and transfer them to your
+external storage device.
+
+\chapter{Introduction to GitHub}\label{introduction-to-github}
+
+Much of our interaction this semester outside of class will utilize
+GitHub.com (or just ``GitHub''). GitHub is a web service that is a
+social network for programmers, developers, data scientists,
+researchers, and academics. It is also a tool for collaborating on
+projects, especially projects that involve writing code.
+
+\section{Git}\label{git}
+
+GitHub is a web application that utilizes
+\href{https://git-scm.com}{Git}:
+
+\begin{quote}
+Git is a free and open source distributed version control system
+designed to handle everything from small to very large projects with
+speed and efficiency.
+\end{quote}
+
+Essentially, Git is a project-wide system for tracking changes to files.
+Think of it as Microsoft office's track changes feature on steroids -
+every change to every file in a directory (a ``repository'' or ``repo''
+in Git-lingo) is tracked. You do no need to host files online to use
+Git. If you have a project saved locally (say, a doctoral thesis), you
+could utilize Git to version control that project without ever uploading
+it to the Internet.
+
+For our purposes, this is just about all you need to know about Git. If
+you want to learn more, \href{https://git-scm.com/about}{Git's `About'
+page} is a great place to start.
+
+\section{More Git-lingo}\label{more-git-lingo}
+
+Beyond ``repositories'', there are a few additional terms that are
+specific to Git and that are helpful to know:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Clone}: Make an identical copy of a repository on your local
+  hard drive.
+\item
+  \textbf{Fork}:
+\item
+  \textbf{Commit}: Approve any changes you have made to a repository.
+\item
+  \textbf{Pull Request}:
+\item
+  \textbf{Sync}: For cloned repositories, files that have been changed
+  need to be pushed to GitHub.com after they are committed.
+\end{itemize}
+
+\section{GitHub.com}\label{github.com}
+
+GitHub is a web service that can host projects using Git's version
+tracking. It is widely used by programmers, software developers, data
+scientists, and academics to host and collaborate projects.
+
+GitHub is an excellent way to backup files for a project since you can
+``sync'' changes made to a repository up to GitHub's servers. It is also
+an excellent way to collaborate on files with colleagues while also
+using Git's version tracking. Repositories can be either public (like
+all of the repos for our seminar) or private, which means that only
+people who have been given access to can view the contents of the repo.
+Private repos require an upgraded account, which retails for \$7/month.
+
+Students can get access to GitHub's paid services for free, however, by
+signing up for a \href{https://education.github.com}{free student
+account}. This will give you access to private repositories for as long
+as you are a student.
+
+\section{GitHub Repositories}\label{github-repositories}
+
+Users of GitHub.com adhere to a couple of norms with their repositories
+that are worth knowing about. Repositories cannot have spaces in their
+names (much like variables in Stata), so the naming conventions that we
+will discuss in relation to Stata this semester all apply to GitHub as
+well!
+
+Public GitHub repositories also contain (typically) at least three core
+files:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  A \textbf{license} file - since the data is out there for public
+  consumption, it is important to think about how that data is licensed.
+  The norm among GitHub users has been to use open source licenses,
+  which let others edit and adapt your work. There are a range of
+  \href{http://choosealicense.com}{licenses} that are commonly used on
+  GitHub.
+\item
+  A \textbf{README} file - this describes the purpose and content of the
+  project.
+\item
+  A \textbf{.gitignore} file - this stops certain types of files from
+  being swept up by GitHub when a user syncs their files with a server.
+\end{enumerate}
+
+Another norm is to write using a
+\href{https://en.wikipedia.org/wiki/Markup_language}{markup language}
+known as \href{https://daringfireball.net/projects/markdown/}{Markdown}.
+Markup languages allow users to specify exactly how they want their text
+to appear when it is parsed and processed by special software. This is
+different from, say, Microsoft Word, which is known as a ``what you see
+is what you get'' or \textbf{WYSIWYG} editor, which uses a graphical
+interface for constructing documents.
+
+\section{Storing GitHub Repositories}\label{storing-github-repositories}
+
+When you clone your repositories, you will be prompted to save them on
+your computer. There are a number of ways in which this process can
+introduce sources for trouble down the road:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  External media - storing data on devices like thumb drives or external
+  hard drives can be a part of a \href{protecting-your-work.html}{backup
+  workflow}. However, I have seen issues where this has appeared to
+  contribute to sync errors with GitHub Desktop, particularly on
+  Windows.
+\item
+  Cloud storage services (Dropbox, Google Drive, etc.) - like external
+  drives, these services can be a part of a
+  \href{protecting-your-work.html}{backup workflow}. However, like
+  external drives, I have seen issues whee this has to contribute to
+  sync errors with GitHub Desktop.
+\end{enumerate}
+
+In order to avoid any issues, I suggest storing GitHub repositories on
+your computer's hard drive and not a thumb drive or other external
+device. Make sure your are saving your files in a place not backed up to
+Dropbox or another cloud storage service.
+
+\section{GitHub Issues}\label{github-issues}
+
+GitHub has a powerful tool for interaction called
+\href{https://help.github.com/articles/about-issues/}{Issues}. These can
+be accessed by opening a repository and then clicking on the ``Issues''
+tab. Issues can be ``opened'' by anyone with access to the repository.
+They allow for a conversation to occur in the form of messages posted
+within the Issue itself. Files can be attached to Issues, and the
+messages can contain Markdown formatting. Once the conversation is
+complete, issues can be marked as ``closed'', which moves them into a
+secondary view on the website so that they are archived.
+
+\section{GitHub Desktop Application}\label{github-desktop-application}
+
+\href{https://desktop.github.com}{GitHub Desktop} is a tool that allows
+you to easily clone repositories hosted on GitHub, commit changes to
+them, and then sync those changes up to the website. You can also create
+new repositories, however this is not task you will have to do this
+semester. GitHub Desktop is not a fully functional desktop version of
+GitHub. For our purposes, it is important to note that the Desktop
+application will not let you easily identify when repositories have been
+updated by other users, view Wikis associated with repositories, or view
+Issues.
+
+\section{Learning More}\label{learning-more}
+
+GitHub has a
+\href{https://help.github.com/articles/good-resources-for-learning-git-and-github/}{resources
+page} with links to websites that are great for helping you learn more
+about how Git and GitHub work!
+
+\chapter{Methods}\label{methods}
+
+We describe our methods in this chapter.
+
+\chapter{Applications}\label{applications}
+
+Some \emph{significant} applications are demonstrated in this chapter.
+
+\section{Example one}\label{example-one}
+
+\section{Example two}\label{example-two}
+
+\chapter{Final Words}\label{final-words}
+
+We have finished a nice book.
+
+\bibliography{packages.bib,book.bib}
+
+
+\end{document}
