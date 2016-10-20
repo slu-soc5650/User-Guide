@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="github-repositories.html">
-<link rel="next" href="github-issues.html">
+<link rel="prev" href="protecting-your-work.html">
+<link rel="next" href="backing-up-your-data.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -136,22 +136,138 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="storing-github-repositories" class="section level2">
-<h2><span class="header-section-number">4.5</span> Storing GitHub Repositories</h2>
-<p>When you clone your repositories, you will be prompted to save them on your computer. There are a number of ways in which this process can introduce sources for trouble down the road:</p>
-<ol style="list-style-type: decimal">
-<li>External media - storing data on devices like thumb drives or external hard drives can be a part of a <a href="protecting-your-work.html">backup workflow</a>. However, I have seen issues where this has appeared to contribute to sync errors with GitHub Desktop, particularly on Windows.</li>
-<li>Cloud storage services (Dropbox, Google Drive, etc.) - like external drives, these services can be a part of a <a href="protecting-your-work.html">backup workflow</a>. However, like external drives, I have seen issues whee this has to contribute to sync errors with GitHub Desktop.</li>
-</ol>
-<p>In order to avoid any issues, I suggest storing GitHub repositories on your computer’s hard drive and not a thumb drive or other external device. Make sure your are saving your files in a place not backed up to Dropbox or another cloud storage service.</p>
+<div id="creating-a-sustainable-file-system" class="section level2">
+<h2><span class="header-section-number">3.1</span> Creating a Sustainable File System</h2>
+<p>In his excellent document <a href="http://plain-text.co"><em>The Plain Person’s Guide to Plain Text Social Science</em></a>, Kieran Healy describes two important revolutions in computing that are currently taking place. One of them is the advent of mobile touch-screen devices, which he notes</p>
+<blockquote>
+<p>hide from the user both the workings of the operating system and (especially) the structure of the file system where items are stored and moved around.</p>
+</blockquote>
+<p>For most users, I would argue that this extends to their laptop or desktop computers as well. I would venture to guess that the majority of my students are used to keeping large numbers of files on their desktops or in an (distressingly) disorganized <code>Documents</code> folder.</p>
+<p>For research, particularly quantitative research, such an approach to file management is unsustainable. It is difficult to produce <em>any</em> research, let alone work that is reproducible, without an active approach to file management.</p>
+<div id="create-a-single-course-directory" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Create a <em>Single</em> Course Directory</h3>
+<p>With one major exception (see the secontion below on GitHub), the most successful approach to organizing files is to identify <em>one and only one</em> area that you will store course files in. Having files scattered around you hard drive between you <code>Desktop</code> directory, <code>Downloads</code>, <code>Documents</code>, and a half dozen other places is a recipe for lost files. It can also add complexity to the task of backing these files up. I recommend naming this directory simply <code>SOC5050</code>. This is short, has no punctuation or spaces (which can create conflicts with software), and explicitly connects the directory to this course as opposed to other courses you may take that are also statistics courses (a good reason to avoid naming the directory <code>Statistics</code>!).</p>
+</div>
+<div id="approach-organizing-systematically" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Approach Organizing Systematically</h3>
+<p>Within your single course directory, I recommend following much of Long’s (2009) advice on organization. Approach this task systematically and mindfully. This approach begins with having a number of dedicated subfolders within your course directory:</p>
+<pre><code>/SOC5050
+  /CoreDocuments
+  /Data
+  /FinalProject
+  /GitHub
+  /Notes
+  /Posted
+  /Readings
+  /Working</code></pre>
+<p>Note again how these directories are named - there are no spaces, special characters, and the names are deliberately short but specific. For a directory with two words (<code>CoreDocuments</code> or <code>FinalProject</code>), I use what is known as camelCase to name the file where the second (any any subsequent) words have their first character capitalized. You could also use dash-case (<code>Core-Documents</code>) or snake_case (<code>Core_Documents</code>) as a naming strategy.</p>
+<p>A <code>.zip</code> file containing an empty folder structure that mirrors what is described below will be posted to GitHub early in the semester.</p>
+<div id="the-coredocuments-directory" class="section level4">
+<h4><span class="header-section-number">3.1.2.1</span> The <code>CoreDocuments</code> Directory</h4>
+<p>This directory should be used to store <em>copies</em> of the core documents repository files that you sync from GitHub - the Syllabus, the Reading List, and the User’s Guide. The files on GitHub may be updated (and therefore updated on your computer when you sync), so having local copies that are independent of GitHub can be helpful if you want to make sure you retain original files.</p>
+</div>
+<div id="the-data-directory" class="section level4">
+<h4><span class="header-section-number">3.1.2.2</span> The <code>Data</code> Directory</h4>
+<p>The data directory should have copies of all original data and their documentation. I recommend renaming the files that you download from Dropbox for simplicity (most files come from the <a href="http://www.icpsr.umich.edu/icpsrweb/">ICPSR data repository</a>, which has a complex standard for file naming) and removing some files from the <code>CPS</code> and <code>NHIS</code> directories:</p>
+<pre><code>/SOC5050
+  /Data
+    /Acock
+    /CPS
+      /cpsCodebook.pdf
+      /cpsDescription.pdf
+      /cpsOriginalData.dta
+      /cpsUserGuide.pdf
+    /Long
+    /NHIS</code></pre>
+<p>Note that the 2012 General Social Survey has been removed - I keep that in the <code>FinalProject</code> directory (see below).</p>
+</div>
+<div id="the-finalproject-directory" class="section level4">
+<h4><span class="header-section-number">3.1.2.3</span> The <code>FinalProject</code> Directory</h4>
+<p>The final project directory should be a microcosm of the larger directory structure, with most major directories replicated so that your final project files have a dedicated, organized home:</p>
+<pre><code>  /SOC5050
+    /FinalProject
+      /Data
+        /gssCodebook.pdf
+        /gssDescription.pdf
+        /gssDocumentation.pdf
+        /gssOriginalData.dta
+        /gssQuestionarrie.pdf
+        /gssRelatedLiterature.txt
+        /gssReportQuickFacks.pdf      
+      /Directions
+      /Notes
+      /Posted
+      /Readings
+      /Working</code></pre>
+<p>I recommend keeping subdirectories within posted dedicated for different versions of your data analysis, paper, and presentation files.</p>
+<p>I also recommend using some type of bibliography software (<a href="http://endnote.com">Endnote</a>, for example, can be obtained for free by SLU students). Whatever application you choose, keep its primary database for your project in the <code>Readings</code> folder along with copies of all <code>.pdf</code> readings.</p>
+<p>You will also be asked to create and maintain a research log for this project (see Long [2009]). I recommend keeping this and any other project notes in the <code>Notes</code> directory.</p>
+<p>Details on the <code>Posted</code> and <code>Working</code> directories can be found below. You should replicate the practices that feed these directories for your final project.</p>
+</div>
+<div id="the-github-directory" class="section level4">
+<h4><span class="header-section-number">3.1.2.4</span> The <code>GitHub</code> directory</h4>
+<p>This directory should contain the local copies of the repositories that you sync from GitHub’s servers:</p>
+<pre><code>  /SOC5050
+    /GitHub
+      /Core-Documents
+      /PrenerAssignments
+      /Week-01
+      /Week-02
+      ...
+      /Week-15</code></pre>
+<p>You should clone and then sync the Core-Documents repository, your assignment repository, and all weekly repositories.</p>
+<p>You will be in-charge of organizing the assignments repository. I recommend creating a subfolder for your final project deliverables, a subfolder for labs, and a subfolder for problem sets. Within those subfolders, create individual directories for assignments:</p>
+<pre><code>  /SOC5050
+    /GitHub
+      /DoeAssignments
+        /FinalProject
+          /Drafts
+          /Final
+          /LiteratureReview
+          /Memo
+        /Labs
+          /Lab01
+          /Lab02
+          ...
+          /Lab16
+        /ProblemSets
+          /PS01
+          /PS02
+          ...
+          /PS10</code></pre>
+<p>There are two important things to keep in mind about about your GitHub directory: 1. The first will only apply to students whose backup strategy involves using <strong>Dropbox</strong> or <strong>Google Drive</strong> to sync their course directory with a cloud storage service. If you do this, you <strong>must</strong> keep local copies of GitHub repositories outside of your course directory. GitHub uses software called Git for version tracking, and Git files (which are hidden from your view if you look at the directories in Apple’s Finder or Windows Explorer) do not mix well with the version tracking software embedded in Dropbox and Google Drive. 2. Do not edit the files in these repositories - copy them to your working folder (or other relevant destination) and then edit versions. Editing files in the <code>Core-Documents</code> or weekly directories may create sync conflicts, and your assignments directory should be dedicated to <em>completed</em> and <em>posted</em> files that are required for submission.</p>
+</div>
+<div id="the-notes-directory" class="section level4">
+<h4><span class="header-section-number">3.1.2.5</span> The <code>Notes</code> Directory</h4>
+<p>Use this as a home for course notes and other resources.</p>
+</div>
+<div id="the-posted-directory" class="section level4">
+<h4><span class="header-section-number">3.1.2.6</span> The <code>Posted</code> Directory</h4>
+<p>I use this the way Long (2009) suggests - once a particular set of assignments, analyses, or writing is completed, I save it in a subfile within the <code>Posted</code> directory:</p>
+<pre><code>  /SOC5050
+    /Posted
+      /Lab01
+      /Lab02
+      /PS01</code></pre>
+<p>These contain all of the files needed for an assignment and not just the deliverables requested for submission. Follow Long’s (2009) advice - one files are saved in the <code>Posted</code> directory, do not edit them again. Copy any necessary data or other files out of the directory into the working directory, and edit them here. Once you are done, save them in a new subfolder within the <code>Posted</code> directory.</p>
+</div>
+<div id="the-readings-directory" class="section level4">
+<h4><span class="header-section-number">3.1.2.7</span> The <code>Readings</code> Directory</h4>
+<p>Use this as a home for <code>.pdf</code> copies of course readings.</p>
+</div>
+<div id="the-working-directory" class="section level4">
+<h4><span class="header-section-number">3.1.2.8</span> The <code>Working</code> Directory</h4>
+<p>As with the <code>Posted</code> directory, I suggest following Long’s (2009) advice and using this as a temporary holding place for files you are working on. Once they are done, move them out of the <code>Working</code> directory immediately and into a subfolder within the <code>Posted</code> directory.</p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="github-repositories.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="github-issues.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="protecting-your-work.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="backing-up-your-data.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
@@ -178,7 +294,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-gitHub.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-protectingYourWork.Rmd",
 "text": null
 },
 "download": ["soc5650-userGuide.pdf", "soc5650-userGuide.epub"],
