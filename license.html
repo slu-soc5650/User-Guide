@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="active-lectures-and-labs.html">
-<link rel="next" href="good-enough-research-practices.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="gettingStarted.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -139,45 +139,11 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="typefaces-fonts-files-and-examples" class="section level2">
-<h2><span class="header-section-number">2.5</span> Typefaces, Fonts, Files, and Examples</h2>
-<div id="typefaces-and-fonts" class="section level3">
-<h3><span class="header-section-number">2.5.1</span> Typefaces and Fonts</h3>
-<p>Stata publications use a <code>monospaced typewriter style typeface</code> to refer to Stata commands (inputs) and Stata results (outputs). I take the extra step of highlighting commands with a when they are referenced in a sentence. In some documents, like lecture slides and cheat-sheets, I may highlight a command by using a to increase the visibility of the command name itself.</p>
-<p>The <code>typewriter typeface</code> is also used to refer to filenames (e.g. <code>auto.dta</code>) or filepaths (e.g. <code>C:\Users\JSmith\Desktop</code>). Finally, we will use the <code>typewriter typeface</code> to refer to GitHub repositories (e.g. <code>Core-Documents</code>, the repository that contains this file).</p>
-<p>Stata publications use <em>italicized text</em> to refer to text that is meant to be replaced. These references will typically appear in a <code>typewriter typeface</code> since they are often part of commands. For example, <code>describe varname</code> (with <code>varname</code> <em>italicized</em>) indicates that you should replace the text <code>varname</code> with the appropriate variable name from your dataset.</p>
-<p>Stata publications use a sans serif typeface to refer to areas of the Stata user interface, menu items, and buttons. Stata publications also use a sans serif typeface to refer to keyboard keys (e.g. Crtl+C) where the plus sign (+) indicates that you should press multiple keys at the same time.</p>
-<p>A sans serif typeface combined with a right facing triangle-style arrow (&gt;) is used to refer to actions that require clicking through a hierarchy of menus or windows (e.g. File &gt; Save).</p>
-<p>FYI, Since you are reading this document rendered as a Markdown file, you can’t see exact examples of what a sans serif typeface looks like.</p>
-</div>
-<div id="stata-files" class="section level3">
-<h3><span class="header-section-number">2.5.2</span> Stata Files</h3>
-<p>There are a number of file types that are important for our use of Stata. These are all likely file types that you have never come across before, and are all discussed in greater detail in the Introducing Stata chapter (see page ).</p>
-<ul>
-<li><p><code>.do</code> - “Stata Do-files” - These are code files that contain commands that Stata can execute automatically. All final analyses and manipulations for research should be done via do-files to increase project documentation and reproducibility.</p></li>
-<li><p><code>.dta</code> - “Stata Datasets” - These are the format that Stata stores tabular data in. We call these “D-T-A” files.</p></li>
-<li><p><code>.smcl</code> - “Stata Log-files” - The default file format for Stata log-files is the <code>.smcl</code> file format, which is a varient of <code>html</code>. It is pronounced “smick-el”. I recommend avoiding this file format whenever possible since only Stata can read it. Instead, save your log-files using the <code>.txt</code> file extension and the <code>text</code> option. The <code>.txt</code> file-type is a so-called “plain text” file format that can be read by an innumerable number of applications. This makes it excellent for reproducibility.</p></li>
-</ul>
-</div>
-<div id="other-files" class="section level3">
-<h3><span class="header-section-number">2.5.3</span> Other Files</h3>
-<p>We will also use a number of other types of files throughout the semester. Some may be file types that you have come across before.</p>
-<ul>
-<li><p><code>.md</code> - “Markdown files” - These are plain text files that contain Markdown syntax (see page ). They are saved with a special file extension so that software applications and web browsers know to take advantage of the embedded Markdown syntax.</p></li>
-<li><p><code>.png</code> - “Portable Network Graphics” or “PNG files” - These are image files designed primarily for use on the Internet and on computer displays.</p></li>
-<li><p><code>.txt</code> - “Plain text files” or “Text files” - These are files that contain text without any formatting (like bold or italicized text, for example). These can be opened by a wide array of text editor applications across all major operating systems.</p></li>
-</ul>
-</div>
-<div id="examples" class="section level3">
-<h3><span class="header-section-number">2.5.4</span> Examples</h3>
-<p>Throughout the semester, I will give you examples both in lecture slides and in an example do-file. Examples in lectures and course documents can be easily identified by their use of the <code>typewriter typeface</code>:</p>
-<pre class="stata"><code>. summarize mpg
-    Variable |        Obs        Mean    Std. Dev.       Min        Max
--------------+---------------------------------------------------------
-         mpg |         74     21.2973    5.785503         12         41</code></pre>
-<p>Examples will almost always use the file <code>census.dta</code>, which comes pre-installed with Stata. To open it, use the <code>sysuse</code> command: <code>sysuse census.dta, clear</code>. This allows you to easily recreate examples by minimizing dependencies within do-files.</p>
+<div id="license" class="section level2 unnumbered">
+<h2>License</h2>
+<p>Copyright © 2016 <a href="http://chrisprener.net">Christopher G. Prener</a></p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 
-</div>
 </div>
 <!-- </div> -->
             </section>
@@ -185,8 +151,8 @@
           </div>
         </div>
       </div>
-<a href="active-lectures-and-labs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="good-enough-research-practices.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gettingStarted.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>

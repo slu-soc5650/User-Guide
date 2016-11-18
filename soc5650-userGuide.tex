@@ -24,7 +24,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={SOC 4650/5650 Users Guide},
+            pdftitle={SOC 4650/5650 User's Guide},
             pdfauthor={Christopher Prener, Ph.D.},
             pdfborder={0 0 0},
             breaklinks=true}
@@ -76,7 +76,7 @@
 }
 
 \setlength{\droptitle}{-2em}
-  \title{SOC 4650/5650 Users Guide}
+  \title{SOC 4650/5650 User's Guide}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
   \author{Christopher Prener, Ph.D.}
@@ -84,7 +84,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2016-10-20}
+  \date{2016-11-12}
 
 \usepackage{booktabs}
 
@@ -100,11 +100,11 @@
 
 This text is a companion document for \textbf{SOC 4650/5650 -
 Introduction to Geographic Information Sciences}. It is designed to help
-you be \emph{successful} in this course. The idea behind a course Users
-Guide is to create a reference for many of the intangible, subtle or
-disparate skills and ideas that contribute to being a successful
-researcher. In creating a Users Guide, I draw inspiration from the work
-of Donald Knuth.\footnote{\href{https://en.wikipedia.org/wiki/Donald_Knuth}{Donald
+you be \emph{successful} in this course. The idea behind a course
+\textbf{User's Guide} is to create a reference for many of the
+intangible, subtle or disparate skills and ideas that contribute to
+being a successful researcher. In creating a \textbf{User's Guide}, I
+draw inspiration from the work of Donald Knuth.\footnote{\href{https://en.wikipedia.org/wiki/Donald_Knuth}{Donald
   Knuth} is the developer of
   \href{https://en.wikipedia.org/wiki/TeX}{TeX}, a computer typesetting
   system that is widely used today for scientific publishing in the form
@@ -126,30 +126,32 @@ thought of them or perceived why they were important\ldots{}
 
 While there is nothing particularly new about what I am writing here,
 and I am certainly not developing a new language for computing, the goal
-of the \textbf{Users Guide} remains similar to Knuth's experience.
-However, by distilling some of key elements for making a successful
-transition to being a \emph{professional developer} of knowledge rather
-than a \emph{casual consumer}, I hope to both improve the course
-experience itself and also create an environment that fosters a
-successful learning experience for you.
+of the \textbf{User's Guide} remains similar to Knuth's experience. By
+distilling some of key elements for making a successful transition to
+being a \emph{professional developer} of knowledge rather than a
+\emph{casual consumer}, I hope to both improve the course experience
+itself and also create an environment that fosters a successful learning
+experience for you.
 
 If you read through the course objectives included in the syllabus, you
 will note that creating maps is only one of them. As much as this is a
-GIS course, it is a course in research methods. We are concerned not
-just with any research methods, but \emph{high quality} research methods
-and the \emph{process} of conducting research.
+GIS course, it is a course in research methods. In particular, we are
+concerned with \emph{high quality} research methods and the
+\emph{process} of conducting research. We therefore focus on a
+combination of mental habits and technical practices that make you a
+successful researcher. Some of the skills and techniques that we will
+discuss this semester are not taught as often in graduate programs.
+Instead, they are often the products of ``learning the hard way''. These
+``habits of mind and habits of method'' are broadly applicable across
+methodologies and disciplines.
 
-There is an important distinction to be made between research methods
-and methodology.\footnote{Methodology refers to the \emph{reasons} for
-  implementing a particular approach to research while method refers to
-  the tools used in the research process
-  (\href{https://books.google.com/books?id=Dq05AwAAQBAJ\&lpg=PA24\&dq=student's\%20guide\%20to\%20methodology\&pg=PP1\#v=onepage\&q\&f=false}{Clough
-  and Nutbrown 2012}:25).} Research methods are the mental habits and
-technical practices that make you a successful researcher. Some of the
-skills and techniques that we will discuss this semester are not taught
-as often in graduate programs. Instead, they are often the products of
-``learning the hard way''. These ``habits of mind and habits of method''
-are broadly applicable across methodologies and disciplines.
+\section*{License}\label{license}
+\addcontentsline{toc}{section}{License}
+
+Copyright © 2016 \href{http://chrisprener.net}{Christopher G. Prener}
+
+This work is licensed under a Creative Commons Attribution 4.0
+International License.
 
 \chapter{Getting Started}\label{gettingStarted}
 
@@ -332,33 +334,33 @@ external storage device.
 \chapter{Approaching this Course}\label{approaching-this-course}
 
 Students have varying experiences learning GIS techniques. For some, the
-mathematics and programming that are the foundation for contemporary
-quantitative methods come naturally. For others, statistics courses are
-an anxiety producing experience. I am fond the phrase ``your mileage
-will vary'' for describing these differences - no two students have the
-exact same experience taking a methods course.
+spatial logic and programming that are the foundation for GIS methods
+come naturally. For others, being introduced to these concepts can be an
+anxiety producing experience. I am fond the phrase ``your mileage will
+vary'' for describing these differences - no two students have the exact
+same experience taking a methods course.
 
 \section{Zen and the Art of Data
 Analysis}\label{zen-and-the-art-of-data-analysis}
 
 One of the biggest challenges with this course can be controlling the
-anxiety that comes along with learning new skills. Formulae, Markdown
-syntax, and Stata commands can seem like foreign alphabets at first.
-Debugging Stata do-files can be both challenging and a large time suck,
-in part because you are not yet fluent with this language. Imagine
+anxiety that comes along with learning new skills. ArcGIS processes,
+Markdown syntax, and Stata commands can seem like foreign alphabets at
+first. Debugging Stata do-files can be both challenging and a large time
+suck, in part because you are not yet fluent with this language. Imagine
 trying to proofread a document written in a language that you only know
 in a cursory way but where you must find minute inconsistencies like
 misplaced commas.
 
 For this reason, I also think it is worth reminding you that many
-students in the social sciences struggle with statistics at first. It is
-normal to find this challenging and frustrating. I find that students
-who can recognize when they are beginning to go around in circles are
-often the most successful at managing the issues that will certainly
-arise during this course. Recognizing the signs that you are starting to
-spin your wheels and taking either ten minutes, an hour or two, or a day
-away from statistics coursework is often a much better approach than
-trying to power through problems.
+students in the social sciences struggle with quantitative methods at
+first. It is normal to find this challenging and frustrating. I find
+that students who can recognize when they are beginning to go around in
+circles are often the most successful at managing the issues that will
+certainly arise during this course. Recognizing the signs that you are
+starting to spin your wheels and taking either ten minutes, an hour or
+two, or a day away from GIS coursework is often a much better approach
+than trying to power through problems.
 
 \section{An Apple a Day}\label{an-apple-a-day}
 
@@ -379,17 +381,17 @@ A sample approach to the class might look something like this:
 \begin{itemize}
 \tightlist
 \item
-  Monday: class
+  Tuesday: class
 \item
-  Tuesday: finish lab
+  Wednesday: finish lab
 \item
-  Wednesday: Start problem set
+  Thursday: Start problem set
 \item
-  Thursday: Finish problem set
+  Friday: Finish problem set
 \item
-  Friday: First reading
+  Saturday: First reading
 \item
-  Saturday: Second reading
+  Monday: Second reading
 \end{itemize}
 
 \section{Reading with Purpose}\label{reading-with-purpose}
@@ -419,19 +421,20 @@ questions.
 
 During \textbf{lectures}, I introduce many of the same topics that your
 readings cover. This again is intentional - it gives you yet another
-exposure to concepts and techniques that are central to inferential
-statistics. One mistake students sometimes make is focusing on the
-details of \emph{how} to do a particular test rather than focusing on
-\emph{when} a test should be done. If you know when a test is needed but
-cannot remember how to do it in Stata, you can look this information up.
-Conversely, detailed notes on executing Stata commands may not be
-helpful if you are unsure when to use a particular test. There is no
-penalty in this course for not knowing how to execute a command from
-memory; this is what reference materials are for. The most successful
-students will therefore focus on \emph{when} a particular test is
-warranted first before focusing on \emph{how} to execute that test.
+exposure to concepts and techniques that are central to geospatial
+science. One mistake students sometimes make is focusing on the details
+of \emph{how} to do a particular task rather than focusing on
+\emph{when} a task should be done. If you know when a task is needed but
+cannot remember how to do it in Stata or ArcGIS, you can look this
+information up. Conversely, detailed notes on executing Stata commands
+may not be helpful if you are unsure when to use a particular skill.
+There is no penalty in this course for not knowing how to execute a
+command from memory; this is what reference materials are for. The most
+successful students will therefore focus on \emph{when} a particular
+skill is warranted first before focusing on \emph{how} to execute that
+skill
 
-Getting experience with executing commands is the purpose of the
+Getting experience with executing tasks is the purpose of the
 \textbf{lab exercises}. Time for beginning these exercises is given at
 the end of each class meeting, and replication files will be posted on
 GitHub for each lab.
@@ -539,10 +542,21 @@ be easily identified by their use of the \texttt{typewriter\ typeface}:
          mpg |         74     21.2973    5.785503         12         41
 \end{verbatim}
 
-Examples will almost always use the file \texttt{auto.dta}, which comes
-pre-installed with Stata. To open it, use the \texttt{sysuse} command:
-\texttt{sysuse\ auto.dta,\ clear}. This allows you to easily recreate
-examples by minimizing dependencies within do-files.
+Examples will almost always use the file \texttt{census.dta}, which
+comes pre-installed with Stata. To open it, use the \texttt{sysuse}
+command: \texttt{sysuse\ census.dta,\ clear}. This allows you to easily
+recreate examples by minimizing dependencies within do-files.
+
+\chapter{\texorpdfstring{``Good Enough'' Research
+Practices}{Good Enough Research Practices}}\label{good-enough-research-practices}
+
+This section introduces some of the core concepts that we will emphasize
+in this course throughout the semester. The title takes inspiration from
+a recent article titled \href{https://arxiv.org/abs/1609.00037}{``Good
+Enough Practices in Scientific Computing''}. The premise of the article
+is twofold. The first premise is that scientific computing advice can
+sometimes be both overwhelming and focused on tools that are
+inaccessible to many analysts.
 
 \chapter{Protecting Your Work}\label{protecting-your-work}
 
