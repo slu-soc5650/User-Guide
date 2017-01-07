@@ -332,6 +332,1117 @@ data before the beginning of the semester. Once you download them,
 extract the data from the \texttt{.zip} file and transfer them to your
 external storage device.
 
+\chapter{Approaching this Course}\label{approaching-this-course}
+
+Students have varying experiences learning GIS techniques. For some, the
+spatial logic and programming that are the foundation for GIS methods
+come naturally. For others, being introduced to these concepts can be an
+anxiety producing experience. I am fond the phrase ``your mileage will
+vary'' for describing these differences - no two students have the exact
+same experience taking a methods course.
+
+\section{Zen and the Art of Data
+Analysis}\label{zen-and-the-art-of-data-analysis}
+
+One of the biggest challenges with this course can be controlling the
+anxiety that comes along with learning new skills. ArcGIS processes,
+Markdown syntax, and Stata commands can seem like foreign alphabets at
+first. Debugging Stata do-files can be both challenging and a large time
+suck, in part because you are not yet fluent with this language. Imagine
+trying to proofread a document written in a language that you only know
+in a cursory way but where you must find minute inconsistencies like
+misplaced commas.
+
+For this reason, I also think it is worth reminding you that many
+students in the social sciences struggle with quantitative methods at
+first. It is normal to find this challenging and frustrating. I find
+that students who can recognize when they are beginning to go around in
+circles are often the most successful at managing the issues that will
+certainly arise during this course. Recognizing the signs that you are
+starting to spin your wheels and taking either ten minutes, an hour or
+two, or a day away from GIS coursework is often a much better approach
+than trying to power through problems.
+
+\section{An Apple a Day}\label{an-apple-a-day}
+
+Being able to walk away from an assignment for a day requires excellent
+time management. If you are waiting until the night before or the day of
+an assignment's due day to begin it, you give yourself little room for
+errors. I recommend approaching this course in bite size chuncks - a
+little each day. The most successful students do not do all of their
+reading, homework, and studying in a single sitting. I find that this
+approach not only creates unnecessary anxiety around assignments, it
+also dramatically limits the amount of course material you can absorb.
+Keep in mind that I expect the \emph{median} student to spend
+approximately six hours on work for this class each week (twice the
+amount of in-class time).
+
+A sample approach to the class might look something like this:
+
+\begin{itemize}
+\tightlist
+\item
+  Tuesday: class
+\item
+  Wednesday: finish lab
+\item
+  Thursday: Start problem set
+\item
+  Friday: Finish problem set
+\item
+  Saturday: First reading
+\item
+  Monday: Second reading
+\end{itemize}
+
+\section{Reading with Purpose}\label{reading-with-purpose}
+
+The book and article \textbf{reading assignments} for this course are
+different from most of the other reading you will do in your graduate
+program because they are often very technical. Students who are most
+successful in this course read twice. Read the first time to expose
+yourself to the material, then take a break from the reading. During
+this first read, I don't recommend trying to complete the example
+problems or programming examples. Focus on the \emph{big picture} - what
+are the concepts and ideas that these readings introduce?
+
+During the second read, try to focus in in the \emph{details} - what are
+the technical details behind the big picture concepts? I recommend doing
+this second read with your computer open. Follow along with the examples
+and execute as much of them as you can. By using this second read
+through as a way to test the waters and experiment with the week's
+content, you can come into the lecture better prepared to take full
+advantage of the class period. Students who follow this approach are
+able make important connections and focus on the essential details
+during lectures because it is their third time being exposed to the
+course material. They are also in a much stronger position to ask
+questions.
+
+\section{Active Lectures and Labs}\label{active-lectures-and-labs}
+
+During \textbf{lectures}, I introduce many of the same topics that your
+readings cover. This again is intentional - it gives you yet another
+exposure to concepts and techniques that are central to geospatial
+science. One mistake students sometimes make is focusing on the details
+of \emph{how} to do a particular task rather than focusing on
+\emph{when} a task should be done. If you know when a task is needed but
+cannot remember how to do it in Stata or ArcGIS, you can look this
+information up. Conversely, detailed notes on executing Stata commands
+may not be helpful if you are unsure when to use a particular skill.
+There is no penalty in this course for not knowing how to execute a
+command from memory; this is what reference materials are for. The most
+successful students will therefore focus on \emph{when} a particular
+skill is warranted first before focusing on \emph{how} to execute that
+skill
+
+Getting experience with executing tasks is the purpose of the
+\textbf{lab exercises}. Time for beginning these exercises is given at
+the end of each class meeting, and replication files will be posted on
+GitHub for each lab.
+
+\section{Typefaces, Fonts, Files, and
+Examples}\label{typefaces-fonts-files-and-examples}
+
+\subsection{Typefaces and Fonts}\label{typefaces-and-fonts}
+
+Stata publications use a
+\texttt{monospaced\ typewriter\ style\ typeface} to refer to Stata
+commands (inputs) and Stata results (outputs). I take the extra step of
+highlighting commands with a when they are referenced in a sentence. In
+some documents, like lecture slides and cheat-sheets, I may highlight a
+command by using a to increase the visibility of the command name
+itself.
+
+The \texttt{typewriter\ typeface} is also used to refer to filenames
+(e.g. \texttt{auto.dta}) or filepaths (e.g.
+\texttt{C:\textbackslash{}Users\textbackslash{}JSmith\textbackslash{}Desktop}).
+Finally, we will use the \texttt{typewriter\ typeface} to refer to
+GitHub repositories (e.g. \texttt{Core-Documents}, the repository that
+contains this file).
+
+Stata publications use \emph{italicized text} to refer to text that is
+meant to be replaced. These references will typically appear in a
+\texttt{typewriter\ typeface} since they are often part of commands. For
+example, \texttt{describe\ varname} (with \texttt{varname}
+\emph{italicized}) indicates that you should replace the text
+\texttt{varname} with the appropriate variable name from your dataset.
+
+Stata publications use a sans serif typeface to refer to areas of the
+Stata user interface, menu items, and buttons. Stata publications also
+use a sans serif typeface to refer to keyboard keys (e.g.~Crtl+C) where
+the plus sign (+) indicates that you should press multiple keys at the
+same time.
+
+A sans serif typeface combined with a right facing triangle-style arrow
+(\textgreater{}) is used to refer to actions that require clicking
+through a hierarchy of menus or windows (e.g.~File \textgreater{} Save).
+
+FYI, Since you are reading this document rendered as a Markdown file,
+you can't see exact examples of what a sans serif typeface looks like.
+
+\subsection{Stata Files}\label{stata-files}
+
+There are a number of file types that are important for our use of
+Stata. These are all likely file types that you have never come across
+before, and are all discussed in greater detail in the Introducing Stata
+chapter (see page ).
+
+\begin{itemize}
+\item
+  \texttt{.do} - ``Stata Do-files'' - These are code files that contain
+  commands that Stata can execute automatically. All final analyses and
+  manipulations for research should be done via do-files to increase
+  project documentation and reproducibility.
+\item
+  \texttt{.dta} - ``Stata Datasets'' - These are the format that Stata
+  stores tabular data in. We call these ``D-T-A'' files.
+\item
+  \texttt{.smcl} - ``Stata Log-files'' - The default file format for
+  Stata log-files is the \texttt{.smcl} file format, which is a varient
+  of \texttt{html}. It is pronounced ``smick-el''. I recommend avoiding
+  this file format whenever possible since only Stata can read it.
+  Instead, save your log-files using the \texttt{.txt} file extension
+  and the \texttt{text} option. The \texttt{.txt} file-type is a
+  so-called ``plain text'' file format that can be read by an
+  innumerable number of applications. This makes it excellent for
+  reproducibility.
+\end{itemize}
+
+\subsection{Other Files}\label{other-files}
+
+We will also use a number of other types of files throughout the
+semester. Some may be file types that you have come across before.
+
+\begin{itemize}
+\item
+  \texttt{.md} - ``Markdown files'' - These are plain text files that
+  contain Markdown syntax (see page ). They are saved with a special
+  file extension so that software applications and web browsers know to
+  take advantage of the embedded Markdown syntax.
+\item
+  \texttt{.png} - ``Portable Network Graphics'' or ``PNG files'' - These
+  are image files designed primarily for use on the Internet and on
+  computer displays.
+\item
+  \texttt{.txt} - ``Plain text files'' or ``Text files'' - These are
+  files that contain text without any formatting (like bold or
+  italicized text, for example). These can be opened by a wide array of
+  text editor applications across all major operating systems.
+\end{itemize}
+
+\subsection{Examples}\label{examples}
+
+Throughout the semester, I will give you examples both in lecture slides
+and in an example do-file. Examples in lectures and course documents can
+be easily identified by their use of the \texttt{typewriter\ typeface}:
+
+\begin{verbatim}
+. summarize mpg
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         mpg |         74     21.2973    5.785503         12         41
+\end{verbatim}
+
+Examples will almost always use the file \texttt{census.dta}, which
+comes pre-installed with Stata. To open it, use the \texttt{sysuse}
+command: \texttt{sysuse\ census.dta,\ clear}. This allows you to easily
+recreate examples by minimizing dependencies within do-files.
+
+\chapter{\texorpdfstring{``Good Enough'' Research
+Practices}{Good Enough Research Practices}}\label{good-enough-research-practices}
+
+This section introduces some of the core concepts that we will emphasize
+in this course throughout the semester. The title takes inspiration from
+a recent article titled \href{https://arxiv.org/abs/1609.00037}{``Good
+Enough Practices in Scientific Computing''}\footnote{Wilson, G., Bryan,
+  J., Cranston, K., Kitzes, J., Nederbragt, L. and Teal, T.K., 2016.
+  Good Enough Practices in Scientific Computing. \emph{arXiv preprint
+  arXiv:1609.00037.}}. The authors note in their introduction that
+scientific computing advice can sometimes be both overwhelming and
+focused on tools that are inaccessible to many analysts. Their goal, and
+the goal of this course, is to de-mystify the simplist tools that enable
+researchers to streamline their workflows:
+
+\begin{quote}
+Our intended audience is researchers who are working alone or with a
+handful of collaborators on projects lasting a few days to a few months,
+and who are ready to move beyond emailing themselves a spreadsheet named
+\texttt{results-updated-3-revised.xlsx} at the end of the
+workday\ldots{}Many of our recommendations are for the benefit of the
+collaborator every researcher cares about most: their future self.
+\end{quote}
+
+I would argue that the skills they describe are useful beyond just a few
+months. Indeed, most of the skills here can dramatically improve
+students' dissertation experiences:
+
+\begin{quote}
+Most importantly, these practices make researchers more productive
+individually by enabling them to get more done in less time and with
+less pain. They also accelerate research as a whole by making
+computational work (which increasingly means all work) more
+reproducible. But progress will not happen by itself. Universities and
+funding agencies need to support training for researchers in the use of
+these tools. Such investment will improve confidence in the results of
+computational work and allow us to make more rapid progress on important
+research questions.
+\end{quote}
+
+While much of what we will talk about in this course is aimed at
+supporting your work, there are benefits that extend beyond your
+dissertation or your research projects. These benefits, which include
+developing sustainable workflows and structuring the way you interact
+with your own computer, can make everyday computing practices like
+checking email or organizing files an easier, more structured process.
+
+\section{Reproducibility}\label{reproducibility}
+
+One of the mantras of this course is our emphasis on reproducibility.
+The unifying feature of all of the ``good enough'' research practices
+discussed below is that they contribute to a more reproducible research
+product.
+
+Reproducibility is very much in vogue right now for number of reasons.
+\href{http://science.sciencemag.org/content/349/6251/aac4716}{Assessments
+of studies in psychology}\footnote{Open Science Collaboration, 2015.
+  Estimating the reproducibility of psychological science.
+  \emph{Science}, 349(6251), p.aac4716.}, for example, have found weaker
+on average effect sizes and far fewer statistically significant results
+than the initial studies reported. There have also been high profile
+instances of falsified research, including
+\href{http://nymag.com/scienceofus/2015/05/how-a-grad-student-uncovered-a-huge-fraud.html}{research
+by a graduate student at UCLA}. This particular instance of fraud was
+identified by gradute students intent on replicating the original study.
+
+At the same time, there is a recognition that the skills necessary for
+producing reproducible research are not being fostered in academic
+disciplines and graduate programs. Thus one of the goals of this course,
+and this \textbf{User's Guide} in particular, is to help develop a
+working knowledge of many of these skills.
+
+One challenge, however, is that reproducibility does not have a
+consistent definition. Some researchers use the term to narrowly refer
+to code that can execute without alteration on a person's computer.
+Others use it to refer to research designs that can be replicated by
+other researchers. Still others discuss reproducibility as the ability
+to obtain a similar set of results or draw similar inferences from
+identical research designs.
+
+When we talk about reproducibility in this class. We'll be primarily
+concerned with \textbf{methods reproducibility}:
+
+\begin{quote}
+the ability to implement, as exactly as possible, the experimental and
+computational procedures, with the same data and tools, to obtain the
+same results.\footnote{Goodman, S.N., Fanelli, D. and Ioannidis, J.P.,
+  2016. What does research reproducibility mean?. \emph{Science
+  translational medicine}, 8(341), pp.341ps12-341ps12.}
+\end{quote}
+
+Methods reproducibility in GISc means that other analysts have full
+access to both the original data and the steps used to render those
+original data into a final research product, such as a set of maps.
+
+For GISc, this ability is derived from a number of sources. The first
+source is the use of \textbf{computer code} for working with data.
+Rather than making manual changes to tabular data in a spreadsheet
+application like Microsoft Excel, computer code provides detailed
+records of each individual alterations. Code can be used execute tasks
+repeatedly, meaning that errors can be easily fixed if they are
+discovered an hour, a day, a week, or a month later. During this
+semester, we'll use Stata's programming language to execute reproducible
+data cleaning processes.
+
+Operations in ArcGIS can also be scripted using the programming language
+\href{https://www.python.org}{Python}. Python is an open-source language
+that is widely used by data analysts and computer programmers. We will
+not learn
+\href{http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm}{ArcPy},
+the library of Python commands for ArcGIS, this semester. However, it is
+important to know that many of the things we will learn this semester
+\emph{can} be scripted, dramatically increasing the reproducibility of
+your work.\footnote{For those of you who are interested, we'll be
+  providing Python/ArcPy examples for many of the ArcGIS taks we learn
+  this semester. These will be available on GitHub in the \texttt{ArcPy}
+  repository for those of you interested in expanding your knowledge.}
+
+Since we won't focus on scripting for ArcGIS this semester, much of the
+work we will do will be done manually. This means that no record exists
+of the changes we make or the steps that we take to complete a task.
+From a reproducibility standpoint, this is problematic. Even if we were
+scripting our work in ArcGIS, there are often aspects of projects that
+must be completed manually. In GISc, this often arises in initial steps
+like download data or in the production of final map products, which
+often require using graphic design software.
+
+The second source of reproducibility in GISc is therefore derived from
+the \textbf{documentation} that we create to accompany our research
+products. These documents outline where our data originated (GIS
+metadata files), what specific variables mean (a codebook), what steps
+were taken to create specific maps (a research log), and how our data
+files are organized (a metadictionary).
+
+The third and final primary source of reproducibility in GISc is derived
+from our \textbf{organizational approach} to our work. GISc projects can
+require many gigabytes of data spread across dozens or even hundreds of
+files, feature classes, and databases. A disorgnaized file system can
+make replicating your work difficult if not impossible. Much of the
+research practices discussed in the remainder of this section are aimed
+at supporting one or more of these three major sources of
+reproducibility.
+
+\section{Thinking in Workflows}\label{thinking-in-workflows}
+
+One way to increase the reproducibility of a project is to approach each
+and every task with purposeful organization and thoughfulness.
+\textbf{Workflows} are the processes that we use to approach a given
+task. Think of checking your email. You (hopefully!) follow a series of
+steps when you check your email that help you organize your inbox. When
+I check my email for the first time each day, my workflow looks
+something like this:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Delete junk mail
+\item
+  Read and then delete New York Times and Washington Post morning
+  newsletters
+\item
+  Read and then delete SLU Newslink newsletter
+\item
+  For each remaining email:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Respond if response will take less than two minutes and/or
+  \item
+    forward to task management inbox if email requires an action, or
+  \item
+    snooze\footnote{Snoozing is a ``magical'' feature of the email
+      client that I use - \href{http://sparkmailapp.com}{SparkMail}.}
+    the message until ``later today'' or ``tomorrow morning'' if
+    response will require more time than currently avaiable.
+  \end{enumerate}
+\end{enumerate}
+
+In our reading for the first week of classes,
+\href{http://www.indiana.edu/~jslsoc/}{Scott Long}\footnote{Long, J.S.,
+  2009. \emph{The workflow of data analysis using Stata.} College
+  Station, TX: Stata Press.} describes a structured strategy for
+approaching statistical research. In Long's model, a data analysis
+project consists of four steps: (a) data cleaning, (b) analysis, (c)
+presenting results, and (d) protecting files. This is a useful model to
+build upon for GISc work, and one that we will discuss over the course
+of the semester.
+
+Even more useful, not just for GISc work but for any process, are the
+tasks Long lays out for each step in the data analysis workflow:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Planning
+\item
+  Organization
+\item
+  Documentation
+\item
+  Execution
+\end{enumerate}
+
+A good example of the utility of extending this logic to other workflows
+is with the problem sets. The ``typical'' approach students take with
+homework assignments is to sit down, open up their software, and start
+with question 1. Using Long's four task approach, a workflow-based
+strategy to the assignment would involve beginning by reading the
+assignment through in its entirety to develop a \textbf{plan} for
+approaching it - think about what techniques and skills are needed for
+each step. With a plan in place, you can proceed to \textbf{organizing}
+yourself for the assignment - identifying and obtaining files that you
+will need, creating dedicated directories for saving assignment data,
+and getting any necessary software documentation. After pulling together
+all of these materials, you are ready to move on to
+\textbf{documentation} - setting up your assignment code and output
+files, and (later in the course) your research log and meta-dictionary.
+Once you are set-up, you would then begin to address individual
+assignment questions as part of the \textbf{execution} task.
+
+The goal here is to approach everything you do for research or work with
+an element of mindfullness and structure about your process. This mental
+model for approaching research supports the creation of
+\textbf{reproducible} research products because we approach our work in
+a routinized, predictable, organized, and efficient manner. Thinking in
+terms of workflows also encourages a greater awareness of the complexity
+of tasks, which also helps you plan more accurately for how long a
+particular task or project will take.
+
+In reality, there will be multiple workflows that you find yourself
+navigating. You will want a structured process not just for approaching
+a large spaital research project like the final project, but also a
+process for maintaining notes related to a specific assignment, a
+process for documenting code, a process for approaching assignments, and
+even a process for backing your data up. As you go through the course,
+think about how to best integrate these ideas into your work habits.
+
+\section{Data Management}\label{data-management}
+
+One of the themes in \href{https://arxiv.org/abs/1609.00037}{``Good
+Enough Practices in Scientific Computing''} is an emphasis on data
+management. One of their core messages is to ``save the raw data''. In
+GISc work, the raw data can be expansize - dozens of shapefiles, tabular
+files, and associated metadata. These files often come from disparate
+sources - city open data sites, the U.S. Census Bureau, state data
+repositories, and other federal agencies. Moreover, GIS data are often
+updated over time to reflect on-the-ground changes. Saving the raw data
+in GISc work therefore means not only creating a well-organized
+directory containing \emph{all} of your original data. It also means
+logging the source of each file, when it was downloaded, and (if
+applicable) a permanent web link to your data source.
+
+A second message in the paper is to ``create the data you wish to see in
+the world''. The authors encourage readers to ``create the dataset you
+wish you had received.'' First and foremost, this means using open and
+not proprietary data formats. For spatial data,
+\href{https://en.wikipedia.org/wiki/Shapefile}{ESRI shapefiles} are
+technically proprietary, though their standard is open. This means that
+other software applications, like \texttt{R}, QGIS, and even Stata can
+read and in some cases write shapefiles. For sharing spatial data, a
+better option is the
+\href{https://en.wikipedia.org/wiki/GeoJSON}{GeoJSON}, which is a plain
+text file format.
+
+Tabular data are best stored as \texttt{CSV} files, which is also a
+plain text file format that can be opeend by a wide variety of
+applications. In contrast, common file formats like Microsoft Excels's
+\texttt{XLS} and \texttt{XLSX} are proprietary file packages that cannot
+be read as plain text and are therefore less desireable for storing
+data.
+
+Both tabular and spatial data, in their final forms, should be what we
+consider ``tidy data''\footnote{Wickham, H., 2014. Tidy Data.
+  \emph{Journal of Statistical Software}, 59(i10).} Tidy data are
+defined by a number of common attributes - each column represents a
+single variable or attribute and each row represents a single, unqiue
+observation. This arrangement should produce clear, easy to read
+datasets.
+
+Tidy datasets also have other characteristics. Variable names should be
+short, clear, and self-explanatory (i.e. \texttt{streetAddress} and
+\texttt{zipCode} are preferable to \texttt{add1} and \texttt{add2}).
+Missing data should be properly declared in a machine-readable format
+instead of using a code like \texttt{-1} or \texttt{9999}. Filenames
+should also be clear and self-explanatory (i.e.
+\texttt{stlouisHomes\_011717.csv} is preferable to \texttt{final.csv}).
+
+In GISc, we also want to follow another maximum from
+\href{https://arxiv.org/abs/1609.00037}{``Good Enough Practices in
+Scientific Computing''} - anticipate the need for multiple tables. We
+often have to merge data from multiple sources to produce our final
+maps, and this requires that the identification variables are all
+formatted and stored in the same way (i.e. \texttt{1234} and
+\texttt{1234}, not \texttt{1234} and \texttt{1,234}). If identification
+variables do not match, software applications will not be able to join
+the multiple tables together.
+
+\begin{itemize}
+\tightlist
+\item
+  Record all the steps used to process data
+\end{itemize}
+
+\section{Software}\label{software}
+
+\begin{itemize}
+\tightlist
+\item
+  Place a brief explanatory comment at the start of every program
+\item
+  Make dependencies and requirements explicit
+\item
+  \emph{follow literatre programming}
+\end{itemize}
+
+\section{Collaboration}\label{collaboration}
+
+\begin{itemize}
+\tightlist
+\item
+  Create an overview of your project
+\item
+  Create a shared public ``to-do'' list
+\item
+  Make the license explicit
+\end{itemize}
+
+\section{Project Organization}\label{project-organization}
+
+\begin{itemize}
+\tightlist
+\item
+  Borrow from Long
+\item
+  Put each project in its own directory, which is named after the
+  project
+\item
+  Put text documents associated with the project in the doc directory
+\item
+  Put raw data and metadata in a data directory, and files generated
+  during cleanup and analysis in a results directory
+\item
+  Name all files to reflect their content or function
+\end{itemize}
+
+\section{Tracking Changes}\label{tracking-changes}
+
+\begin{itemize}
+\tightlist
+\item
+  Back up (almost) everything created by a human being as soon as it is
+  created
+\item
+  Keep changes small
+\item
+  Share changes frequently
+\item
+  Create, maintain, and use a checklist for saving and sharing changes
+  to the project
+\item
+  Store each project in a folder that is mirrored off the researcher's
+  working machine
+\end{itemize}
+
+\chapter{Protecting Your Work}\label{protecting-your-work}
+
+Each semester that I teach this course or SOC 5050 (Quantitative
+Analysis), two things happen. The first thing that happens is that
+students regularly lose files. The effects of losing files can range
+from being a minor frustration to a major headache depending on the file
+in question. Losing files often results in downloading multiple copies
+of the same data and recreating work. Both of these are wastes of your
+time. Moreover, files are rarely gone. They are typically just
+misplaced. This is bad for reproducibility, particularly when you happen
+across multiple versions of the same file and have to sort out which
+version is the version you last worked on.
+
+The second thing that happens is that students lose their thumb drives.
+Depending on the timing of this loss, this can again range from being a
+minor frustration (very early in the semester) to being downright
+anxiety attack producing (last few weeks of the semester). Recreating an
+entire semester's worth of work on the final project is both a
+tremendous waste of your time and a particularly unpleasant experience.
+
+Fortunately, I have never had a student's computer hard drive die during
+the course of the semester. However, I assume that if I teach this
+course long enough a hard drive failure will indeed occur. The backup
+provider \href{https://www.backblaze.com/}{Backblaze} has
+\href{https://www.backblaze.com/blog/how-long-do-disk-drives-last/}{analyzed}
+their own hard drives and found that about 5\% of drives fail within the
+first year. After four years, a quarter (25\%) of drives in their data
+center fail.
+
+Similarly, it is only a matter of time before a student's computer is
+stolen along with all of their hard work. A less likely though still
+very plausible scenario involves the destruction of a student's
+belongings (computer and thumb drive included) in a fire, car accident,
+flood, earthquake, tornado, hurricane, avalanche, or mudslide.
+
+Despite the likelihood that you will at some-point lose a thumb drive
+(if not during this semester than sometime down the road) and the near
+certainty that your computer's hard drive will eventually fail if a
+rogue wave does not get it first, few students and faculty take these
+risks seriously. While you cannot prevent many of these things from
+happening, I want to suggest to you that you can take some simple steps
+to sure that \emph{when} (not if) they happen, you are well prepared to
+get back to work with minimal disruption.
+
+\section{Creating a Sustainable File
+System}\label{creating-a-sustainable-file-system}
+
+In his excellent document \href{http://plain-text.co}{\emph{The Plain
+Person's Guide to Plain Text Social Science}}, Kieran Healy describes
+two important revolutions in computing that are currently taking place.
+One of them is the advent of mobile touch-screen devices, which he notes
+
+\begin{quote}
+hide from the user both the workings of the operating system and
+(especially) the structure of the file system where items are stored and
+moved around.
+\end{quote}
+
+For most users, I would argue that this extends to their laptop or
+desktop computers as well. I would venture to guess that the majority of
+my students are used to keeping large numbers of files on their desktops
+or in an (distressingly) disorganized \texttt{Documents} folder.
+
+For research, particularly quantitative research, such an approach to
+file management is unsustainable. It is difficult to produce \emph{any}
+research, let alone work that is reproducible, without an active
+approach to file management.
+
+\subsection{\texorpdfstring{Create a \emph{Single} Course
+Directory}{Create a Single Course Directory}}\label{create-a-single-course-directory}
+
+The most successful approach to organizing files is to identify
+\emph{one and only one} area that you will store course files in. Having
+files scattered around you hard drive between you \texttt{Desktop}
+directory, \texttt{Downloads}, \texttt{Documents}, and a half dozen
+other places is a recipe for lost files. It can also add complexity to
+the task of backing these files up. I recommend naming this directory
+simply \texttt{SOC5650}. This is short, has no punctuation or spaces
+(which can create conflicts with software), and explicitly connects the
+directory to this course as opposed to other courses you may take that
+are also GIS courses (a good reason to avoid naming the directory
+\texttt{GIS}!).
+
+\subsection{Approach Organizing
+Systematically}\label{approach-organizing-systematically}
+
+Within your single course directory, I recommend following much of
+Long's (2009) advice on organization. Approach this task systematically
+and mindfully. This approach begins with having a number of dedicated
+subfolders within your course directory:
+
+\begin{verbatim}
+/SOC5650
+  /CoreDocuments
+  /Data
+  /FinalProject
+  /GitHub
+  /Notes
+  /PrenerAssignments
+  /Readings
+  /Working
+\end{verbatim}
+
+Note again how these directories are named - there are no spaces,
+special characters, and the names are deliberately short but specific.
+For a directory with two words (\texttt{CoreDocuments} or
+\texttt{FinalProject}), I use what is known as camelCase to name the
+file where the second (any any subsequent) words have their first
+character capitalized. You could also use dash-case
+(\texttt{Core-Documents}) or snake\_case (\texttt{Core\_Documents}) as a
+naming strategy.
+
+A \texttt{.zip} file containing an empty folder structure that mirrors
+what is described below will be posted to GitHub early in the semester.
+
+\subsubsection{\texorpdfstring{The \texttt{CoreDocuments}
+Directory}{The CoreDocuments Directory}}\label{the-coredocuments-directory}
+
+This directory should be used to store \emph{copies} of the core
+documents repository files that you sync from GitHub - the Syllabus, the
+Reading List, and the User's Guide. The files on GitHub may be updated
+(and therefore updated on your computer when you sync), so having local
+copies that are independent of GitHub can be helpful if you want to make
+sure you retain original files.
+
+\subsubsection{\texorpdfstring{The \texttt{Data}
+Directory}{The Data Directory}}\label{the-data-directory}
+
+The data directory should have copies of all original data and their
+documentation.
+
+\subsubsection{\texorpdfstring{The \texttt{FinalProject}
+Directory}{The FinalProject Directory}}\label{the-finalproject-directory}
+
+The final project directory should be a microcosm of the larger
+directory structure, with most major directories replicated so that your
+final project files have a dedicated, organized home:
+
+\begin{verbatim}
+  /SOC5650
+    /FinalProject
+      /Data
+      /Directions
+      /GitHub
+      /Notes
+      /Readings
+      /Working
+\end{verbatim}
+
+I recommend keeping subdirectories within posted dedicated for different
+versions of your data analysis, paper, and presentation files.
+
+For graduate students, I also recommend using some type of bibliography
+software (\href{http://endnote.com}{Endnote}, for example, can be
+obtained for free by SLU students). Whatever application you choose,
+keep its primary database for your project in the \texttt{Readings}
+folder along with copies of all \texttt{.pdf} readings.
+
+You will also be asked to create and maintain a research log for this
+project (see Long {[}2009{]}). I recommend keeping this and any other
+project notes in the \texttt{Notes} directory.
+
+Details on the \texttt{Posted} and \texttt{Working} directories can be
+found below. You should replicate the practices that feed these
+directories for your final project.
+
+\subsubsection{\texorpdfstring{The \texttt{GitHub}
+directory}{The GitHub directory}}\label{the-github-directory}
+
+This directory should contain the local copies of the repositories that
+you sync from GitHub's servers:
+
+\begin{verbatim}
+  /SOC5050
+    /GitHub
+      /Core-Documents
+      /PrenerAssignments
+      /Week-01
+      /Week-02
+      ...
+      /Week-15
+\end{verbatim}
+
+You should clone and then sync the Core-Documents repository, your
+assignment repository, and all weekly repositories.
+
+You will be in-charge of organizing the assignments repository. I
+recommend creating a subfolder for your final project deliverables, a
+subfolder for labs, and a subfolder for problem sets. Within those
+subfolders, create individual directories for assignments:
+
+\begin{verbatim}
+  /SOC5050
+    /GitHub
+      /DoeAssignments
+        /FinalProject
+          /Drafts
+          /Final
+          /LiteratureReview
+          /Memo
+        /Labs
+          /Lab01
+          /Lab02
+          ...
+          /Lab16
+        /ProblemSets
+          /PS01
+          /PS02
+          ...
+          /PS10
+\end{verbatim}
+
+There are two important things to keep in mind about about your GitHub
+directory: 1. The first will only apply to students whose backup
+strategy involves using \textbf{Dropbox} or \textbf{Google Drive} to
+sync their course directory with a cloud storage service. If you do
+this, you \textbf{must} keep local copies of GitHub repositories outside
+of your course directory. GitHub uses software called Git for version
+tracking, and Git files (which are hidden from your view if you look at
+the directories in Apple's Finder or Windows Explorer) do not mix well
+with the version tracking software embedded in Dropbox and Google Drive.
+2. Do not edit the files in these repositories - copy them to your
+working folder (or other relevant destination) and then edit versions.
+Editing files in the \texttt{Core-Documents} or weekly directories may
+create sync conflicts, and your assignments directory should be
+dedicated to \emph{completed} and \emph{posted} files that are required
+for submission.
+
+\subsubsection{\texorpdfstring{The \texttt{Notes}
+Directory}{The Notes Directory}}\label{the-notes-directory}
+
+Use this as a home for course notes and other resources.
+
+\subsubsection{\texorpdfstring{The \texttt{Posted}
+Directory}{The Posted Directory}}\label{the-posted-directory}
+
+I use this the way Long (2009) suggests - once a particular set of
+assignments, analyses, or writing is completed, I save it in a subfile
+within the \texttt{Posted} directory:
+
+\begin{verbatim}
+  /SOC5050
+    /Posted
+      /Lab01
+      /Lab02
+      /PS01
+\end{verbatim}
+
+These contain all of the files needed for an assignment and not just the
+deliverables requested for submission. Follow Long's (2009) advice - one
+files are saved in the \texttt{Posted} directory, do not edit them
+again. Copy any necessary data or other files out of the directory into
+the working directory, and edit them here. Once you are done, save them
+in a new subfolder within the \texttt{Posted} directory.
+
+\subsubsection{\texorpdfstring{The \texttt{Readings}
+Directory}{The Readings Directory}}\label{the-readings-directory}
+
+Use this as a home for \texttt{.pdf} copies of course readings.
+
+\subsubsection{\texorpdfstring{The \texttt{Working}
+Directory}{The Working Directory}}\label{the-working-directory}
+
+As with the \texttt{Posted} directory, I suggest following Long's (2009)
+advice and using this as a temporary holding place for files you are
+working on. Once they are done, move them out of the \texttt{Working}
+directory immediately and into a subfolder within the \texttt{Posted}
+directory.
+
+\section{Backing Up Your Data}\label{backing-up-your-data}
+
+There are a number of different ways to think about backing up your
+data. The most successful backup strategies will incorporate all of
+these elements.
+
+\subsection{Bootable Backups}\label{bootable-backups}
+
+``Bootable'' backups are mirrored images of your \emph{entire} hard
+drive, down to temporary files, icons, and system files. With a bootable
+backup, you can restore your entire computer in the event of a hard
+drive failure or a corruption of the operating system files. They are
+named as such because you can plug in the external drive that you are
+using for this backup and literally boot your computer up from that
+drive (typically a \emph{very} slow process).
+
+These backups are often made less frequently because they can be
+resource intensive and it is best not to use your operating system while
+creating a clone. They are typically made to an external hard drive,
+which is subject to similar failure rates as the hard drives inside your
+computer. So bootable drives need to be replaced every few years to
+maintain their reliability.
+
+Both major operating systems come with applications for creating clones
+of your main hard drive that are bootable, and there are a number of
+third party applications that provide this service as well.
+
+\subsection{Incremental Backups}\label{incremental-backups}
+
+Incremental backups are designed to keep multiple copies of a single
+file (how often depends on the type of software you use and the settings
+you select). These can be used to restore an older copy of a file if
+work is lost or a newer file is corrupted.
+
+Apple's TimeMachine is a great example of an incremental backup - when
+kept on, it creates hourly backups of files that have been changed,
+daily backups for the previous month, and weekly backups for previous
+months. Once the disk is full, the oldest backups are deleted. Dropbox
+also provides a similar service, retaining all previous versions of
+files (and deleted files) for thirty days.
+
+Incremental backups are typically good options for recovering files that
+have been recently changed (again, depending on the software you use and
+the settings you select). Since they run frequently (every time a file
+is changed or every hour, for example), recent changes tend to get
+captured. They can be limited in terms of their long-term storage - it
+may not be possible to recover older versions of a file past a few
+weeks.
+
+They are also not always good solutions for recreating your entire
+computer since they do not save all necessary program and operating
+system files, and may be cumbersome to work with if you need to recover
+a large quantity of files. Like bootable backups, these are typically
+stored on external hard drives that need to be replaced on a regular
+basis.
+
+In addition to the aforementioned Apple TimeMachine, the Windows OS also
+comes with a built-in service for creating incremental backups. Dropbox
+is a good option if you have a small number of files, but you may find
+the need to upgrade to a paid account if you have a large amount of
+data.
+
+\subsection{Cloud Backups}\label{cloud-backups}
+
+Cloud backup services like \href{https://www.backblaze.com}{Backblaze}
+or \href{https://www.code42.com/crashplan/}{Crashplan} offer
+comprehensive backup solutions for customers. These plans typically
+require a monthly subscription fee to maintain access to your backups.
+While bootable backups protect against hard drive failure and
+incremental backups protect against data corruption, cloud backups
+protect against catastrophic events like robberies, fires, and other
+natural disasters. A fire or a tornado that affect your house may
+destroy your laptop and any external hard drives you use for backup, but
+your cloud backup will be unaffected.
+
+\subsection{A Workflow for Backups}\label{a-workflow-for-backups}
+
+Just as we need a workflow for approaching file management, it is also
+important to establish a routine for backups. With backups, the most
+successful workflows are those that require next to no effort on your
+part. If you primarily use a desktop, this can be as simple as leaving
+two external hard drives plugged into your computer since most backup
+software can be set to run automatically. If you have tasks that require
+you to manually do something (plug an external hard drive into your
+computer, for instance), create a reminder for yourself on a paper
+calendar or a digital calendar or to-do list application.
+
+\chapter{Introduction to GitHub}\label{introduction-to-github}
+
+Much of our interaction this semester outside of class will utilize
+GitHub.com (or just ``GitHub''). GitHub is a web service that is a
+social network for programmers, developers, data scientists,
+researchers, and academics. It is also a tool for collaborating on
+projects, especially projects that involve writing code.
+
+\section{Git}\label{git}
+
+GitHub is a web application that utilizes
+\href{https://git-scm.com}{Git}:
+
+\begin{quote}
+Git is a free and open source distributed version control system
+designed to handle everything from small to very large projects with
+speed and efficiency.
+\end{quote}
+
+Essentially, Git is a project-wide system for tracking changes to files.
+Think of it as Microsoft office's track changes feature on steroids -
+every change to every file in a directory (a ``repository'' or ``repo''
+in Git-lingo) is tracked. You do no need to host files online to use
+Git. If you have a project saved locally (say, a doctoral thesis), you
+could utilize Git to version control that project without ever uploading
+it to the Internet.
+
+For our purposes, this is just about all you need to know about Git. If
+you want to learn more, \href{https://git-scm.com/about}{Git's `About'
+page} is a great place to start.
+
+\section{More Git-lingo}\label{more-git-lingo}
+
+Beyond ``repositories'', there are a few additional terms that are
+specific to Git and that are helpful to know:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Clone}: Make an identical copy of a repository on your local
+  hard drive.
+\item
+  \textbf{Fork}:
+\item
+  \textbf{Commit}: Approve any changes you have made to a repository.
+\item
+  \textbf{Pull Request}:
+\item
+  \textbf{Sync}: For cloned repositories, files that have been changed
+  need to be pushed to GitHub.com after they are committed.
+\end{itemize}
+
+\section{GitHub.com}\label{github.com}
+
+GitHub is a web service that can host projects using Git's version
+tracking. It is widely used by programmers, software developers, data
+scientists, and academics to host and collaborate projects.
+
+GitHub is an excellent way to backup files for a project since you can
+``sync'' changes made to a repository up to GitHub's servers. It is also
+an excellent way to collaborate on files with colleagues while also
+using Git's version tracking. Repositories can be either public (like
+all of the repos for our seminar) or private, which means that only
+people who have been given access to can view the contents of the repo.
+Private repos require an upgraded account, which retails for \$7/month.
+
+Students can get access to GitHub's paid services for free, however, by
+signing up for a \href{https://education.github.com}{free student
+account}. This will give you access to private repositories for as long
+as you are a student.
+
+\section{GitHub Repositories}\label{github-repositories}
+
+Users of GitHub.com adhere to a couple of norms with their repositories
+that are worth knowing about. Repositories cannot have spaces in their
+names (much like variables in Stata), so the naming conventions that we
+will discuss in relation to Stata this semester all apply to GitHub as
+well!
+
+Public GitHub repositories also contain (typically) at least three core
+files:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  A \textbf{license} file - since the data is out there for public
+  consumption, it is important to think about how that data is licensed.
+  The norm among GitHub users has been to use open source licenses,
+  which let others edit and adapt your work. There are a range of
+  \href{http://choosealicense.com}{licenses} that are commonly used on
+  GitHub.
+\item
+  A \textbf{README} file - this describes the purpose and content of the
+  project.
+\item
+  A \textbf{.gitignore} file - this stops certain types of files from
+  being swept up by GitHub when a user syncs their files with a server.
+\end{enumerate}
+
+Another norm is to write using a
+\href{https://en.wikipedia.org/wiki/Markup_language}{markup language}
+known as \href{https://daringfireball.net/projects/markdown/}{Markdown}.
+Markup languages allow users to specify exactly how they want their text
+to appear when it is parsed and processed by special software. This is
+different from, say, Microsoft Word, which is known as a ``what you see
+is what you get'' or \textbf{WYSIWYG} editor, which uses a graphical
+interface for constructing documents.
+
+\section{Storing GitHub Repositories}\label{storing-github-repositories}
+
+When you clone your repositories, you will be prompted to save them on
+your computer. There are a number of ways in which this process can
+introduce sources for trouble down the road:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  External media - storing data on devices like thumb drives or external
+  hard drives can be a part of a \href{protecting-your-work.html}{backup
+  workflow}. However, I have seen issues where this has appeared to
+  contribute to sync errors with GitHub Desktop, particularly on
+  Windows.
+\item
+  Cloud storage services (Dropbox, Google Drive, etc.) - like external
+  drives, these services can be a part of a
+  \href{protecting-your-work.html}{backup workflow}. However, like
+  external drives, I have seen issues whee this has to contribute to
+  sync errors with GitHub Desktop.
+\end{enumerate}
+
+In order to avoid any issues, I suggest storing GitHub repositories on
+your computer's hard drive and not a thumb drive or other external
+device. Make sure your are saving your files in a place not backed up to
+Dropbox or another cloud storage service.
+
+\section{GitHub Issues}\label{github-issues}
+
+GitHub has a powerful tool for interaction called
+\href{https://help.github.com/articles/about-issues/}{Issues}. These can
+be accessed by opening a repository and then clicking on the ``Issues''
+tab. Issues can be ``opened'' by anyone with access to the repository.
+They allow for a conversation to occur in the form of messages posted
+within the Issue itself. Files can be attached to Issues, and the
+messages can contain Markdown formatting. Once the conversation is
+complete, issues can be marked as ``closed'', which moves them into a
+secondary view on the website so that they are archived.
+
+\section{GitHub Desktop Application}\label{github-desktop-application}
+
+\href{https://desktop.github.com}{GitHub Desktop} is a tool that allows
+you to easily clone repositories hosted on GitHub, commit changes to
+them, and then sync those changes up to the website. You can also create
+new repositories, however this is not task you will have to do this
+semester. GitHub Desktop is not a fully functional desktop version of
+GitHub. For our purposes, it is important to note that the Desktop
+application will not let you easily identify when repositories have been
+updated by other users, view Wikis associated with repositories, or view
+Issues.
+
+\section{Learning More}\label{learning-more}
+
+GitHub has a
+\href{https://help.github.com/articles/good-resources-for-learning-git-and-github/}{resources
+page} with links to websites that are great for helping you learn more
+about how Git and GitHub work!
+
+\chapter{Final Words}\label{final-words}
+
+We have finished a nice book.
+
 \bibliography{packages.bib,book.bib}
 
 
