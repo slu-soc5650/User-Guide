@@ -1,0 +1,54 @@
+# Getting Started {#gettingStarted}
+
+Before you begin the semester, there are a number of things that I recommend that you do to help set yourself up for success. Before you do *anything* else, you should read through the [**Syllabus**]() and the [**Reading List**](). Make sure you have a good sense of what is *required* for the course. If you have questions, bring them to the first day of class!
+
+## Prep Your Computer
+
+Before you do anything else for this course, make sure you get your computer ready for the work you are about to undertake:
+
+  1. Make sure your operating system is up-to-date. If you are able, I would also recommend upgrading your computer to the most recent release of its operating system that the computer can run.
+  2. We'll be sharing computer files throughout the semester, so you should ensure that you have functioning anti-virus software and that it is up-to-date.
+  3. You'll also need to download files, so you'll need to make sure you have some free space on your hard drive. If you have less than 10GB of free space, you should de-clutter!
+  4. Make sure you know how to access your computer's file management system.
+    - On macOS, this means being comfortable with Finder.app.
+    - On Windows, this means being comfortable with Windows Explorer.
+
+This of course assumes that you own a computer. Owning a computer is not required for this course. All students who are enrolled in SOC 4650 or SOC 5650 will be given 24-hour swipe access (*just what you always wanted!*) to Morrissey Hall to facilitate access to lab computers.
+    
+## Create Accounts
+There are two major web services that we will use this semester, and you'll need to create accounts for both: 
+
+  * **GitHub** - you can sign-up at [GitHub.com](https://github.com). Once you've signed up, fill out your profile, set-up [two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/), and let Chris know (via [email](mailto:prenercg@slu.edu)) what your user name is. Once he has it, he can add you to the [SOC 4650/5650](https://github.com/slu-soc5650) organization.
+  * **Slack** - you can ask Chris (via [email](mailto:prenercg@slu.edu)) for an invitation to sign-up for our team. Once the sign-up process is complete, you can log-in by going to our team's [Slack site](https://slu-soc5650.slack.com). Fill out your profile, set-up [two-factor authentication](https://get.slack.help/hc/en-us/articles/204509068-Set-up-two-factor-authentication), and change your timezone.
+
+## Download and Install Software
+There are a number of software applications that we will use this semester. Most of them are free, and I recommend downloading those free ones right away. All of these applications are available for macOS and Windows. 
+
+  * **Atom** - Atom is a flexible, open-source text editor that is produced by GitHub. You can download it from Atom's [website](https://atom.io).
+  * **GitHub Desktop** - GitHub makes a desktop client that you can use to easily interact with repositories that are stored on the site. You can download it from GitHub's [website](https://desktop.github.com) after you sign-up for an account there. You'll need that account information to complete the desktop client's set-up process.
+  * **Slack** - Slack has a number of applications for desktop and mobile operating systems. I recommend downloading Slack on your personal computer, and optionally installing it on your mobile device as well. You can download their desktop applications from their [website](https://slack.com/downloads) and the mobile applications from your App Store.
+
+### For Graduate Students *only* {-}
+If your computer meets the [operating system requirements](http://desktop.arcgis.com/en/arcmap/10.3/get-started/system-requirements/arcgis-desktop-system-requirements.htm) for ArcGIS and you think you'd benefit from having access to the software at home, let Chris know (via [email](mailto:prenercg@slu.edu)). 
+
+If you are in the Public and Social Policy Ph.D. program and your computer meets the [hardware](http://www.stata.com/support/faqs/windows/hardware-requirements/) and [software](http://www.stata.com/products/compatible-operating-systems/) requirements for Stata, you should consider [purchasing it](https://www.stata.com/order/new/edu/gradplans/student-pricing/) for yourself. I recommend purchasing a perpetual license for Stata/IC. This is the most cost-effective solution for typical students.
+
+## Buy Course Materials
+### Books {-}
+There are three required books for this course:
+
+  1.  Brewer, Cynthia. 2015. *Designing Better Maps: A Guide for GIS Users*. Redlands, CA: ESRI Press. ISBN-13: 978-1589484405; List Price: $59.99; ebook versions available.
+  2.  Gorr, Wilpen L. and Kristen S. Kurland. 2013. *GIS Tutorial 1: Basic Workbook*. 10.3.x edition. Redlands, CA: ESRI Press. ISBN-13: 978-1589484566; List Price: $79.99; ebook versions available.
+  3.  Thomas, Christopher and Nancy Humenik-Sappington. 2009. *GIS for Decision Support and Public Policy Making*. Redlands, CA: ESRI Press. ISBN-13: 978-1589482319; List Price: $24.95.
+
+There is one additional book that is optional:
+
+  - Mitchell, Michael N. 2010. *Data Management Using Stata: A Practical Handbook*. College Station, TX: Stata Press. ISBN-13: 978-1597180764; List Price: $48.00.
+
+Buying Mitchell (2010) is *highly* recommended for graduate students who will continue using Stata in the future and those who are concerned about the command-line interface. I recommend waiting for a week or two before purchasing this.
+
+### External Media {-}
+You will need a USB external storage device (either an external hard drive or a thumb-style drive) that has at least 20GB of storage capacity. This will be used for storing spatial data for this course.
+
+## Download Course Data
+Mots of the course data is available for download via Dropbox in a single `.zip` file. If you want, you can let Chris know (via [email](mailto:prenercg@slu.edu)) that you'd like to download these data before the beginning of the semester. Once you download them, extract the data from the `.zip` file and transfer them to your external storage device.
