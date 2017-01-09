@@ -43,7 +43,6 @@ Another norm is to write using a [markup language](https://en.wikipedia.org/wiki
 ## Storing GitHub Repositories
 When you clone your repositories, you will be prompted to save them on your computer. There are a number of ways in which this process can introduce sources for trouble down the road:
 
-  1. External media - storing data on devices like thumb drives or external hard drives can be a part of a [backup workflow](protecting-your-work.html). However, I have seen issues where this has appeared to contribute to sync errors with GitHub Desktop, particularly on Windows.
   2. Cloud storage services (Dropbox, Google Drive, etc.)  - like external drives, these services can be a part of a [backup workflow](protecting-your-work.html). However, like external drives, I have seen issues whee this has to contribute to sync errors with GitHub Desktop.
 
 In order to avoid any issues, I suggest storing GitHub repositories on your computer's hard drive and not a thumb drive or other external device. Make sure your are saving your files in a place not backed up to Dropbox or another cloud storage service.
