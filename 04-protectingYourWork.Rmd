@@ -42,13 +42,13 @@ Note again how these directories are named - there are no spaces, special charac
 
 The course data release is embedded in an otherwise empty folder structure that mirrors this layout. When you download these data and the accompanying directories, un-zip them and move the entire contents to the root of your thumb drive or external hard drive. If you are registered for SOC 4650 and want your directory to match your registration, feel free to rename it `SOC4650`.
 
-#### The `Core-Documents` Directory
+### The `Core-Documents` Directory
 This directory will *not* be included in the folder structure that you download along with the course data release. This directory will be added to your file system during **Lab-01**, when it is **cloned** from GitHub. A cloned directory is one that retains a digitial link to the data stored on GitHub, meaning that it can be easily updated if changes are made. This will be explained in greater depth in the next chapter of the User's Guide. **Do not edit the files in these repositories.**
 
-#### The `Data` Directory
+### The `Data` Directory
 The data directory should have copies of all original data and their documentation. Most of these data are included in the initial data release, but you will have to add some additional data to this directory over the course of the semester. The data in this directory should be used as needed but not altered (one of the of the "good enough" research practices from the previous chapter).
 
-#### The `DoeAssignments` Directory
+### The `DoeAssignments` Directory
 Like the `Core-Documents` repository, this will not be included in the course data release. You will add it to your file system during **Lab-01**. It will also have a different name - your last name instead of 'Doe'. Once you add it, it will contain a number of subdirectories:
 
 ```
@@ -75,7 +75,7 @@ The `FinalProject` directory contains submission folders for each component of t
 
 The `Labs` and `ProblemSets` directories have subfolders dedicated to the 26 individual assignments you'll have to submit over the course of the semester. **These directories are intended to store only the deliverables that are requested in each assignment's directions.** All other files related to each assignment should be stored elsewhere.
 
-#### The `FinalProject` Directory
+### The `FinalProject` Directory
 The final project directory should be a microcosm of the larger directory structure, with most major directories replicated so that your final project files have a dedicated, organized home:
 
 ```
@@ -93,22 +93,22 @@ You'll notice that there are a number of new directories dedicated to specific a
 
 *SOC 5650 students*: you will want to add directories for the `/AnnotatedBib` and `/Paper` aspects of the assignment. I also recommend using some type of bibliography software. ([Endnote](http://endnote.com), for example, can be obtained for free by SLU students). Whatever application you choose, keep its primary database for your project in the `Readings` folder along with copies of all `.pdf` readings.
 
-#### The `Labs` Directory
+### The `Labs` Directory
 This directory contains subfolders for each of the sixteen lab assignments for this course. Save *all* of the associated materials for each lab assignment here, including text files, documentation, map files and output, data tables, and any new data that you are asked to create and save.
 
-#### The `Lectures` Directory
+### The `Lectures` Directory
 This directory contains subfolders for each of the sixteen weeks of the course. When we create new data files, make maps, or write code during lectures, save these documents in the appropriate week's folder.
 
-#### The `Notes` Directory
+### The `Notes` Directory
 Use this as a home for course notes.
 
-#### The `ProblemSets` Directory
+### The `ProblemSets` Directory
 This directory contains subfolders for each of the ten problem set assignments for this course. Save *all* of the associated materials for each problem set here, including text files, documentation, map files and output, data tables, and any new data that you are asked to create and save.
 
-#### The `Readings` Directory
+### The `Readings` Directory
 Use this as a home for `.pdf` copies of course readings.
 
-#### The `WeeklyRepos` Directory
+### The `WeeklyRepos` Directory
 Clone each of the weekly repos to this directory, and sync them when updates are made to ensure you have the latest versions of files.
 
 **Do not edit the files in these repositories.** If you want or need to work with them, make a copy and save it into the relevant assignment directory.
