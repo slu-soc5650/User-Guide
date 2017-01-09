@@ -32,20 +32,21 @@ Within your single course directory, I recommend following much of Long's (2009)
   /DoeAssignments
   /FinalProject
   /Labs
+  /Lectures
   /Notes
   /ProblemSets
   /Readings
   /WeeklyRepos
 ```
-Note again how these directories are named - there are no spaces, special characters, and the names are deliberately short but specific. For a directory with two words (`CoreDocuments` or `FinalProject`), I use what is known as camelCase to name the file where the second (any any subsequent) words have their first character capitalized. You could also use dash-case (`Core-Documents`) or snake_case (`Core_Documents`) as a naming strategy.
+Note again how these directories are named - there are no spaces, special characters, and the names are deliberately short but specific. For a directory with two words (`CoreDocuments` or `FinalProject`), I use what is known as camelCase to name the file where the second (any any subsequent) words have their first character capitalized. You could also use dash-case (`Core-Documents`) or snake_case (`Core_Documents`) as a naming strategy. Regardless of which of these approaches you take, use it consistently.
 
 The course data release is embedded in an otherwise empty folder structure that mirrors this layout. When you download these data and the accompanying directories, un-zip them and move the entire contents to the root of your thumb drive or external hard drive. If you are registered for SOC 4650 and want your directory to match your registration, feel free to rename it `SOC4650`.
 
 #### The `Core-Documents` Directory
-This directory will *not* be included in the folder structure that you download along with the course data release. This directory will be added to your file system during **Lab-01**, when it is **cloned** from GitHub. A cloned directory is one that retains a digitial link to the data stored on GitHub, meaning that it can be easily updated if changes are made. This will be explained in greater depth in the next chapter of the User's Guide.
+This directory will *not* be included in the folder structure that you download along with the course data release. This directory will be added to your file system during **Lab-01**, when it is **cloned** from GitHub. A cloned directory is one that retains a digitial link to the data stored on GitHub, meaning that it can be easily updated if changes are made. This will be explained in greater depth in the next chapter of the User's Guide. **Do not edit the files in these repositories.**
 
 #### The `Data` Directory
-The data directory should have copies of all original data and their documentation.
+The data directory should have copies of all original data and their documentation. Most of these data are included in the initial data release, but you will have to add some additional data to this directory over the course of the semester. The data in this directory should be used as needed but not altered (one of the of the "good enough" research practices from the previous chapter).
 
 #### The `DoeAssignments` Directory
 Like the `Core-Documents` repository, this will not be included in the course data release. You will add it to your file system during **Lab-01**. It will also have a different name - your last name instead of 'Doe'. Once you add it, it will contain a number of subdirectories:
@@ -70,9 +71,9 @@ Like the `Core-Documents` repository, this will not be included in the course da
         /PS-10
 ```
 
-The `FinalProject` directory contains submission folders for each component of the final project. If you a registered for SOC 4650, your directory will look like what appears above. Students registered for SOC 5650 will have a couple of additional subfolders for deliverables related to the final paper element of the course.
+The `FinalProject` directory contains submission folders for each component of the final project. If you a registered for SOC 4650, your directory will look like what appears above. Students registered for SOC 5650 will have three additional subfolders for deliverables related to the final paper element of the course.
 
-The `Labs` and `ProblemSets` directories have subfolders dedicated to the 26 individual assignments you'll have to submit over the course of the semester. These directories are intended to store only the deliverables that are requested in each assignment's directions. All other files related to each assignment should be stored elsewhere.
+The `Labs` and `ProblemSets` directories have subfolders dedicated to the 26 individual assignments you'll have to submit over the course of the semester. **These directories are intended to store only the deliverables that are requested in each assignment's directions.** All other files related to each assignment should be stored elsewhere.
 
 #### The `FinalProject` Directory
 The final project directory should be a microcosm of the larger directory structure, with most major directories replicated so that your final project files have a dedicated, organized home:
@@ -83,32 +84,26 @@ The final project directory should be a microcosm of the larger directory struct
       /Data
       /DataAnalysis
       /Documentation
-      /FinalProject
-      /LitReview
       /Memo
       /Notes
-      /Paper
       /Poster
       /Readings
 ```
-You'll notice that there are a number of new directories dedicated to specific aspects of the project. Some of these will not apply to students enrolled in SOC 4650. Those students can delete the `/LitReview` and `/Paper` subdirectories.
+You'll notice that there are a number of new directories dedicated to specific aspects of the project. 
 
-For graduate students, I also recommend using some type of bibliography software ([Endnote](http://endnote.com), for example, can be obtained for free by SLU students). Whatever application you choose, keep its primary database for your project in the `Readings` folder along with copies of all `.pdf` readings.
+*SOC 5650 students*: you will want to add directories for the `/AnnotatedBib` and `/Paper` aspects of the assignment. I also recommend using some type of bibliography software. ([Endnote](http://endnote.com), for example, can be obtained for free by SLU students). Whatever application you choose, keep its primary database for your project in the `Readings` folder along with copies of all `.pdf` readings.
+
+#### The `Labs` Directory
+This directory contains subfolders for each of the sixteen lab assignments for this course. Save *all* of the associated materials for each lab assignment here, including text files, documentation, map files and output, data tables, and any new data that you are asked to create and save.
+
+#### The `Lectures` Directory
+This directory contains subfolders for each of the sixteen weeks of the course. When we create new data files, make maps, or write code during lectures, save these documents in the appropriate week's folder.
 
 #### The `Notes` Directory
-Use this as a home for course notes and other resources.
+Use this as a home for course notes.
 
-#### The `Posted` Directory
-I use this the way Long (2009) suggests - once a particular set of assignments, analyses, or writing is completed, I save it in a subfolder within the `Posted` directory:
-
-```
-  /SOC5050
-    /Posted
-      /Lab01
-      /Lab02
-      /PS01
-```
-These contain all of the files needed for an assignment and not just the deliverables requested for submission. Follow Long's (2009) advice - one files are saved in the `Posted` directory, do not edit them again. Copy any necessary data or other files out of the directory into the working directory, and edit them here. Once you are done, save them in a new subfolder within the `Posted` directory.
+#### The `ProblemSets` Directory
+This directory contains subfolders for each of the ten problem set assignments for this course. Save *all* of the associated materials for each problem set here, including text files, documentation, map files and output, data tables, and any new data that you are asked to create and save.
 
 #### The `Readings` Directory
 Use this as a home for `.pdf` copies of course readings.
@@ -116,8 +111,7 @@ Use this as a home for `.pdf` copies of course readings.
 #### The `WeeklyRepos` Directory
 Clone each of the weekly repos to this directory, and sync them when updates are made to ensure you have the latest versions of files.
 
-Do not edit the files in these repositories. Editing files in the `Core-Documents` or weekly directories may create sync conflicts, and your assignments directory should be dedicated to *completed* and *posted* files that are required for submission.
-
+**Do not edit the files in these repositories.** If you want or need to work with them, make a copy and save it into the relevant assignment directory.
 
 ## Backing Up Your Data
 There are a number of different ways to think about backing up your data. The most successful backup strategies will incorporate all of these elements.
@@ -145,3 +139,11 @@ Cloud backup services like [Backblaze](https://www.backblaze.com) or [Crashplan]
 
 ### A Workflow for Backups
 Just as we need a workflow for approaching file management, it is also important to establish a routine for backups. With backups, the most successful workflows are those that require next to no effort on your part. If you primarily use a desktop, this can be as simple as leaving two external hard drives plugged into your computer since most backup software can be set to run automatically. If you have tasks that require you to manually do something (plug an external hard drive into your computer, for instance), create a reminder for yourself on a paper calendar or a digital calendar or to-do list application.
+
+For this course in particular, it is *imperative* that you backup the data on your flash drive. A number of possibilities exist for accomplishing this:
+
+  - Keep a local copy of your flash drive's files on your computer.
+  - Keep a `.zip` archive of your files in a service like Dropbox or Google Drive. (Using a `.zip` archive will prevent issues with your `.git` repositories.)
+  - Maintain a second flash drive copies of all of your files.
+  
+Whatever solution you select, make sure you regularly update your backup. The more often you keep your backup archive updated, the less stressful and disruptive losing your drive will be. This will likely be a manual task, so follow the guidance above about creating a repeating calendar event or to-do list task reminder. 
