@@ -80,3 +80,5 @@ We'll use issues for both assignment feedback and grading. Please keep up with i
 
 ## Learning More
 GitHub has a [resources page](https://help.github.com/articles/good-resources-for-learning-git-and-github/) with links to websites that are great for helping you learn more about how Git and GitHub work! The next chapter also has some additional GitHub and Git information.
+
+One particularly great [tutorial](https://try.github.io/) walks you through the command line process for creating and using a git repository. Even if you do not want to use Git via the command line, the tutorial does an *excellent* job of describing the logic and sequence behind the Git workflow.
