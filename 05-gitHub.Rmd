@@ -27,6 +27,35 @@ GitHub is an excellent way to backup files for a project since you can "sync" ch
 
 Students can get access to GitHub's paid services for free, however, by signing up for a [free student account](https://education.github.com). This will give you access to private repositories for as long as you are a student.
 
+## The Workflow of Git and GitHub
+The typical approach to versioning for many students is manual. For a hypothetical class response paper, it might look something like this:
+
+```{r echo=FALSE, out.width = '50%'}
+knitr::include_graphics("images/gitFlow01.png")
+```
+
+The author made an initial copy of the paper, and then used a haphazard and inconsistent approach for naming subsequent copies of the paper. We can presume that changes were made in a linear fashion, though it is easy to make changes to, say, `First Response Paper 2.doc` after `First Response Paper 3.doc` has been created and edited.
+
+Instead of saving copies of their hypothetical paper, a student using GitHub could write the paper in a single document, **commiting** their changes as they progress to take "snapshots" of their progress. These snapshots contain information on changes the student has made, tracked line-by-line. So, at each point in which a new document would have been created in the typical workflow, a student using GitHub would simply **commit** their changes:
+
+```{r echo=FALSE, out.width = '100%'}
+knitr::include_graphics("images/gitFlow02.png")
+```
+
+Git provides a number of useful features beyond simply tracking changes. Eachc commit is accompanied a **message**. These messages must have a short summary that appears on GitHub and can also have a longer description that can be used to describe in detail what changes are being applied with a specific commit:
+
+```{r echo=FALSE, out.width = '100%'}
+knitr::include_graphics("images/gitFlow03.png")
+```
+
+Messages, combined with the changes that are tracked, allow users to trace the development of a single document or an entire project overtime:
+
+```{r echo=FALSE, out.width = '100%'}
+knitr::include_graphics("images/gitFlow04.png")
+```
+
+This means that, if necessary, the project can also be rolled back to an earlier period. Finally, users can **sync** their commits with GitHub.com, hosting their changes and their data in a way that protects them against certain types of computer failures and also allowing them to easily share their work with others.
+
 ## GitHub Repositories
 Users of GitHub.com adhere to a couple of norms with their repositories that are worth knowing about. Repositories cannot have spaces in their names (much like variables in Stata), so the naming conventions that we will discuss in relation to Stata this semester all apply to GitHub as well!
 
