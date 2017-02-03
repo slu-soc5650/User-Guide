@@ -10,6 +10,18 @@ Similarly, it is only a matter of time before a student’s computer is stolen a
 
 Despite the likelihood that you will at some-point lose a thumb drive (if not during this semester than sometime down the road) and the near certainty that your computer’s hard drive will eventually fail if a rogue wave does not get it first, few students and faculty take these risks seriously. While you cannot prevent many of these things from happening, I want to suggest to you that you can take some simple steps to sure that *when* (not if) they happen, you are well prepared to get back to work with minimal disruption.
 
+## Data Management
+
+One of the themes in ["Good Enough Practices in Scientific Computing"](https://arxiv.org/abs/1609.00037), referenced in the previous chapter, is an emphasis on data management. One of their core messages is to ``save the raw data''. In GISc work, the raw data can be expansize - dozens of shapefiles, tabular files, and associated metadata. These files often come from disparate sources - city open data sites, the U.S. Census Bureau, state data repositories, and other federal agencies. Moreover, GIS data are often updated over time to reflect on-the-ground changes. Saving the raw data in GISc work therefore means not only creating a well-organized directory containing *all* of your original data. It also means logging the source of each file, when it was downloaded, and (if applicable) a permanent web link to your data source. For that reason, we'll give you not just the course data but a readme file and a metadictionary that lists all of the files we've disseminated to you. 
+
+A second message in the paper is to "create the data you wish to see in the world". The authors encourage readers to "create the dataset you wish you had received." First and foremost, this means using open and not proprietary data formats. For spatial data, [ESRI shapefiles](https://en.wikipedia.org/wiki/Shapefile) are technically proprietary, though their standard is open. This means that other software applications, like `R`, QGIS, and even Stata can read and in some cases write shapefiles. For sharing spatial data, a better option is the [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON), which is a plain text file format.
+
+Tabular data are best stored as `CSV` files, which is also a plain text file format that can be opeend by a wide variety of applications. In contrast, common file formats like Microsoft Excels's `XLS` and `XLSX` are proprietary file packages that cannot be read as plain text and are therefore less desireable for storing data.
+
+Both tabular and spatial data, in their final forms, should be what we consider "tidy data"^[Wickham, H., 2014. Tidy Data. *Journal of Statistical Software*, 59(i10).] Tidy data are defined by a number of common attributes - each column represents a single variable or attribute and each row represents a single, unqiue observation. This arrangement should produce clear, easy to read datasets that represent a single observational unit.
+
+Tidy datasets also have other characteristics. Variable names should be short, clear, and self-explanatory (i.e. `streetAddress` and `zipCode` are preferable to `add1` and `add2`). Missing data should be properly declared in a machine-readable format instead of using a code like `-1` or `9999`. Filenames should also be clear and self-explanatory (i.e. `stlouisHomes_011717.csv` is preferable to `final.csv`).
+
 ## Creating a Sustainable File System
 In his excellent document [*The Plain Person’s Guide to Plain Text Social Science*](http://plain-text.co), Kieran Healy describes two important revolutions in computing that are currently taking place. One of them is the advent of mobile touch-screen devices, which he notes
 
