@@ -2,7 +2,7 @@
 
 Much of our interaction this semester outside of class will utilize GitHub.com (or just "GitHub"). GitHub is a web service that is a social network for programmers, developers, data scientists, researchers, and academics. It is also a tool for collaborating on projects, especially projects that involve writing code.
 
-We'll use GitHub as an alternative to Blackboard, the *course management system* that students are typically familiar with. Course materials will be posted there, and GitHub's features will allow you to copy them and keep them updated as changes are made. You'll also use GitHub to submit assignments for grading, and we'll give you feedback and grades via GitHub as well. 
+We'll use GitHub as an alternative to Blackboard, the *course management system* that students are typically familiar with. Course materials will be posted there, and GitHub's features will allow you to copy them and keep them updated as changes are made. You'll also use GitHub to submit assignments for grading, and we'll give you feedback and grades via GitHub as well.
 
 ## Git
 GitHub is a web application that utilizes [Git](https://git-scm.com):
@@ -42,7 +42,7 @@ Instead of saving copies of their hypothetical paper, a student using GitHub cou
 knitr::include_graphics("images/gitFlow02.png")
 ```
 
-Git provides a number of useful features beyond simply tracking changes. Eachc commit is accompanied a **message**. These messages must have a short summary that appears on GitHub and can also have a longer description that can be used to describe in detail what changes are being applied with a specific commit:
+Git provides a number of useful features beyond simply tracking changes. Each commit is accompanied a **message**. These messages must have a short summary that appears on GitHub and can also have a longer description that can be used to describe in detail what changes are being applied with a specific commit:
 
 ```{r echo=FALSE, out.width = '100%'}
 knitr::include_graphics("images/gitFlow03.png")
@@ -68,7 +68,7 @@ Public GitHub repositories also contain (typically) at least three core files:
   3. A **.gitignore** file - this stops certain types of files from being swept up by GitHub when a user syncs their files with a server.
 
 ## Storing GitHub Repositories
-When you clone your repositories, you will be prompted to save them on your computer. There are a number of ways in which this process can introduce sources for trouble down the road. The principle way that I have seen students run into problems with GitHub is by storing repositories on cloud storage services like Dropbox or Google Drive. In order to avoid any issues, I advise against storing GitHub repositories in an area of your computer that syncs with a cloud service. 
+When you clone your repositories, you will be prompted to save them on your computer. There are a number of ways in which this process can introduce sources for trouble down the road. The principle way that I have seen students run into problems with GitHub is by storing repositories on cloud storage services like Dropbox or Google Drive. In order to avoid any issues, I advise against storing GitHub repositories in an area of your computer that syncs with a cloud service.
 
 ## GitHub Issues
 GitHub has a powerful tool for interaction called [Issues](https://help.github.com/articles/about-issues/). These can be accessed by opening a repository and then clicking on the "Issues" tab. Issues can be "opened" by anyone with access to the repository. They allow for a conversation to occur in the form of messages posted within the Issue itself. Files can be attached to Issues, and the messages can contain Markdown formatting. Once the conversation is complete, issues can be marked as "closed", which moves them into a secondary view on the website so that they are archived.

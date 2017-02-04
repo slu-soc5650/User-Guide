@@ -1,4 +1,4 @@
-# Protecting Your Work 
+# Protecting Your Work
 
 Each semester that I teach this course or [SOC 5050 (Quantitative Analysis)](https://slu-soc5050.github.io), two things happen. The first thing that happens is that students regularly lose files. The effects of losing files can range from being a minor frustration to a major headache depending on the file in question. Losing files often results in downloading multiple copies of the same data and recreating work. Both of these are wastes of your time. Moreover, files are rarely gone. They are typically just misplaced. This is bad for reproducibility, particularly when you happen across multiple versions of the same file and have to sort out which version is the version you last worked on.
 
@@ -12,13 +12,13 @@ Despite the likelihood that you will at some-point lose a thumb drive (if not du
 
 ## Data Management
 
-One of the themes in ["Good Enough Practices in Scientific Computing"](https://arxiv.org/abs/1609.00037), referenced in the previous chapter, is an emphasis on data management. One of their core messages is to ``save the raw data''. In GISc work, the raw data can be expansize - dozens of shapefiles, tabular files, and associated metadata. These files often come from disparate sources - city open data sites, the U.S. Census Bureau, state data repositories, and other federal agencies. Moreover, GIS data are often updated over time to reflect on-the-ground changes. Saving the raw data in GISc work therefore means not only creating a well-organized directory containing *all* of your original data. It also means logging the source of each file, when it was downloaded, and (if applicable) a permanent web link to your data source. For that reason, we'll give you not just the course data but a readme file and a metadictionary that lists all of the files we've disseminated to you. 
+One of the themes in ["Good Enough Practices in Scientific Computing"](https://arxiv.org/abs/1609.00037), referenced in the previous chapter, is an emphasis on data management. One of their core messages is to ``save the raw data''. In GISc work, the raw data can be expansive - dozens of shapefiles, tabular files, and associated metadata. These files often come from disparate sources - city open data sites, the U.S. Census Bureau, state data repositories, and other federal agencies. Moreover, GIS data are often updated over time to reflect on-the-ground changes. Saving the raw data in GISc work therefore means not only creating a well-organized directory containing *all* of your original data. It also means logging the source of each file, when it was downloaded, and (if applicable) a permanent web link to your data source. For that reason, we'll give you not just the course data but a read me file and a metadictionary that lists all of the files we've disseminated to you.
 
 A second message in the paper is to "create the data you wish to see in the world". The authors encourage readers to "create the dataset you wish you had received." First and foremost, this means using open and not proprietary data formats. For spatial data, [ESRI shapefiles](https://en.wikipedia.org/wiki/Shapefile) are technically proprietary, though their standard is open. This means that other software applications, like `R`, QGIS, and even Stata can read and in some cases write shapefiles. For sharing spatial data, a better option is the [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON), which is a plain text file format.
 
-Tabular data are best stored as `CSV` files, which is also a plain text file format that can be opeend by a wide variety of applications. In contrast, common file formats like Microsoft Excels's `XLS` and `XLSX` are proprietary file packages that cannot be read as plain text and are therefore less desireable for storing data.
+Tabular data are best stored as `CSV` files, which is also a plain text file format that can be opened by a wide variety of applications. In contrast, common file formats like Microsoft Excels's `XLS` and `XLSX` are proprietary file packages that cannot be read as plain text and are therefore less desirable for storing data.
 
-Both tabular and spatial data, in their final forms, should be what we consider "tidy data"^[Wickham, H., 2014. Tidy Data. *Journal of Statistical Software*, 59(i10).] Tidy data are defined by a number of common attributes - each column represents a single variable or attribute and each row represents a single, unqiue observation. This arrangement should produce clear, easy to read datasets that represent a single observational unit.
+Both tabular and spatial data, in their final forms, should be what we consider "tidy data"^[Wickham, H., 2014. Tidy Data. *Journal of Statistical Software*, 59(i10).] Tidy data are defined by a number of common attributes - each column represents a single variable or attribute and each row represents a single, unique observation. This arrangement should produce clear, easy to read datasets that represent a single observational unit.
 
 Tidy datasets also have other characteristics. Variable names should be short, clear, and self-explanatory (i.e. `streetAddress` and `zipCode` are preferable to `add1` and `add2`). Missing data should be properly declared in a machine-readable format instead of using a code like `-1` or `9999`. Filenames should also be clear and self-explanatory (i.e. `stlouisHomes_011717.csv` is preferable to `final.csv`).
 
@@ -56,7 +56,7 @@ Note again how these directories are named - there are no spaces, special charac
 The course data release is embedded in an otherwise empty folder structure that mirrors this layout. When you download these data and the accompanying directories, un-zip them and move the entire contents to the root of your thumb drive or external hard drive. If you are registered for SOC 4650 and want your directory to match your registration, feel free to rename it `SOC4650`.
 
 ### The `Core-Documents` Directory
-This directory will *not* be included in the folder structure that you download along with the course data release. This directory will be added to your file system during **Lab-03**, when it is **cloned** from GitHub. A cloned directory is one that retains a digitial link to the data stored on GitHub, meaning that it can be easily updated if changes are made. This will be explained in greater depth in the next chapter of the User's Guide. **Do not edit the files in these repositories.**
+This directory will *not* be included in the folder structure that you download along with the course data release. This directory will be added to your file system during **Lab-03**, when it is **cloned** from GitHub. A cloned directory is one that retains a digital link to the data stored on GitHub, meaning that it can be easily updated if changes are made. This will be explained in greater depth in the next chapter of the User's Guide. **Do not edit the files in these repositories.**
 
 ### The `Data` Directory
 The data directory should have copies of all original data and their documentation. Most of these data are included in the initial data release, but you will have to add some additional data to this directory over the course of the semester. The data in this directory should be used as needed but not altered (one of the of the "good enough" research practices from the previous chapter).
@@ -72,12 +72,12 @@ Like the `Core-Documents` repository, this will not be included in the course da
         /Memo
         /PosterDraft
         /PosterFinal
-        
+
       /Labs
         /Lab-01
         ...
         /Lab-16
-        
+
       /ProblemSets
         /PS-01
         ...
@@ -102,7 +102,7 @@ The final project directory should be a microcosm of the larger directory struct
       /Poster
       /Readings
 ```
-You'll notice that there are a number of new directories dedicated to specific aspects of the project. 
+You'll notice that there are a number of new directories dedicated to specific aspects of the project.
 
 *SOC 5650 students*: you will want to add directories for the `/AnnotatedBib` and `/Paper` aspects of the assignment. I also recommend using some type of bibliography software. ([Endnote](http://endnote.com), for example, can be obtained for free by SLU students). Whatever application you choose, keep its primary database for your project in the `Readings` folder along with copies of all `.pdf` readings.
 
@@ -158,5 +158,5 @@ For this course in particular, it is *imperative* that you backup the data on yo
   - Keep a local copy of your flash drive's files on your computer.
   - Keep a `.zip` archive of your files in a service like Dropbox or Google Drive. (Using a `.zip` archive will prevent issues with your `.git` repositories.)
   - Maintain a second flash drive copies of all of your files.
-  
-Whatever solution you select, make sure you regularly update your backup. The more often you keep your backup archive updated, the less stressful and disruptive losing your drive will be. This will likely be a manual task, so follow the guidance above about creating a repeating calendar event or to-do list task reminder. 
+
+Whatever solution you select, make sure you regularly update your backup. The more often you keep your backup archive updated, the less stressful and disruptive losing your drive will be. This will likely be a manual task, so follow the guidance above about creating a repeating calendar event or to-do list task reminder.
