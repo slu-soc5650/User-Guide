@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="protecting-your-work.html">
-<link rel="next" href="creating-a-sustainable-file-system.html">
+<link rel="prev" href="course-tools.html">
+<link rel="next" href="protecting-your-work.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -168,27 +168,26 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-management" class="section level2">
-<h2><span class="header-section-number">4.1</span> Data Management</h2>
-<p>One of the themes in <a href="https://arxiv.org/abs/1609.00037">“Good Enough Practices in Scientific Computing”</a>, referenced in the previous chapter, is an emphasis on data management. One of their core messages is to ``save the raw data’’. In GISc work, the raw data can be expansive - dozens of shapefiles, tabular files, and associated metadata. These files often come from disparate sources - city open data sites, the U.S. Census Bureau, state data repositories, and other federal agencies. Moreover, GIS data are often updated over time to reflect on-the-ground changes. Saving the raw data in GISc work therefore means not only creating a well-organized directory containing <em>all</em> of your original data. It also means logging the source of each file, when it was downloaded, and (if applicable) a permanent web link to your data source. For that reason, we’ll give you not just the course data but a read me file and a metadictionary that lists all of the files we’ve disseminated to you.</p>
-<p>A second message in the paper is to “create the data you wish to see in the world”. The authors encourage readers to “create the dataset you wish you had received.” First and foremost, this means using open and not proprietary data formats. For spatial data, <a href="https://en.wikipedia.org/wiki/Shapefile">ESRI shapefiles</a> are technically proprietary, though their standard is open. This means that other software applications, like <code>R</code>, QGIS, and even Stata can read and in some cases write shapefiles. For sharing spatial data, a better option is the <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a>, which is a plain text file format.</p>
-<p>Tabular data are best stored as <code>CSV</code> files, which is also a plain text file format that can be opened by a wide variety of applications. In contrast, common file formats like Microsoft Excels’s <code>XLS</code> and <code>XLSX</code> are proprietary file packages that cannot be read as plain text and are therefore less desirable for storing data.</p>
-<p>Both tabular and spatial data, in their final forms, should be what we consider “tidy data”<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> Tidy data are defined by a number of common attributes - each column represents a single variable or attribute and each row represents a single, unique observation. This arrangement should produce clear, easy to read datasets that represent a single observational unit.</p>
-<p>Tidy datasets also have other characteristics. Variable names should be short, clear, and self-explanatory (i.e. <code>streetAddress</code> and <code>zipCode</code> are preferable to <code>add1</code> and <code>add2</code>). Missing data should be properly declared in a machine-readable format instead of using a code like <code>-1</code> or <code>9999</code>. Filenames should also be clear and self-explanatory (i.e. <code>stlouisHomes_011717.csv</code> is preferable to <code>final.csv</code>).</p>
+<div id="course-workflow" class="section level2">
+<h2><span class="header-section-number">3.4</span> Course Workflow</h2>
+<p>One of the largest learning curves with this course is keeping track of how all of these tools fit together. This process is described in detail in <a href="https://github.com/slu-soc5650/week-02">Week 2’s lecture</a>, but what follows is a short description of the “big picture” at work here. As we said above, it is important for you to being thinking in workflows. We’ve mapped out the major aspects of our course workflow to help aid that process:</p>
+<p><img src="images/gisFlow1.png" width="100%" /></p>
+<p>This workflow is premised on a common GISc situation: you have data stored in some type of database in a <strong>tabular</strong> or spreadsheet-like format that have a <strong>spatial reference</strong> like an address, which would allow them to be mapped. This main dataset of interest needs cleaning, as real world data often do, before it can be mapped. We’ll use code written in Atom and executed by Stata to accomplish this task. We’ll also use Atom to maintain and edit documentation that helps you increase the reproducibility of your work.</p>
+<p>Once the data are cleaned, we’ll want to start working on mapping them. This cannot occur in a vacuum. Rather, you will need to seek out data sources that describe the physical or human geography in the area of interest. These may come as <strong>shapefiles</strong> or <strong>geodatabases</strong>, and they may also require some sort of data cleaning. Often the spatial data we have access to cover a larger area than what we need, or they cover too small an area and have to be merged with other files to capture the extent we require.</p>
+<p>Once both our tabular and spatial data are cleaned, we can bring our tabular data in ArcGIS so that we can further clean it, if necessary, and map it. When we have maps ready for export, we often combine them into deliverables like presentations or printed booklets. This is best accomplished outside of ArcGIS in an application like PowerPoint or Word, or a more advanced publishing tool.</p>
+<p>Finally, as we noted above, we will capture and track <em>almost</em> all of these files using GitHub:</p>
+<p><img src="images/gisFlow2.png" width="100%" /></p>
+<p>This workflow captures every aspect of a project from the bright idea that launches it to data acquisition, data cleaning, mapping, dissemination, and archiving.</p>
+
 </div>
-<div class="footnotes">
-<hr />
-<ol start="8">
-<li id="fn8"><p>Wickham, H., 2014. Tidy Data. <em>Journal of Statistical Software</em>, 59(i10).<a href="data-management.html#fnref8">↩</a></p></li>
-</ol>
-</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="protecting-your-work.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="creating-a-sustainable-file-system.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="course-tools.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="protecting-your-work.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
