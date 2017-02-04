@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="protecting-your-work.html">
-<link rel="next" href="creating-a-sustainable-file-system.html">
+<link rel="prev" href="languages.html">
+<link rel="next" href="using-panes.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -168,27 +168,37 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-management" class="section level2">
-<h2><span class="header-section-number">4.1</span> Data Management</h2>
-<p>One of the themes in <a href="https://arxiv.org/abs/1609.00037">“Good Enough Practices in Scientific Computing”</a>, referenced in the previous chapter, is an emphasis on data management. One of their core messages is to ``save the raw data’’. In GISc work, the raw data can be expansive - dozens of shapefiles, tabular files, and associated metadata. These files often come from disparate sources - city open data sites, the U.S. Census Bureau, state data repositories, and other federal agencies. Moreover, GIS data are often updated over time to reflect on-the-ground changes. Saving the raw data in GISc work therefore means not only creating a well-organized directory containing <em>all</em> of your original data. It also means logging the source of each file, when it was downloaded, and (if applicable) a permanent web link to your data source. For that reason, we’ll give you not just the course data but a read me file and a metadictionary that lists all of the files we’ve disseminated to you.</p>
-<p>A second message in the paper is to “create the data you wish to see in the world”. The authors encourage readers to “create the dataset you wish you had received.” First and foremost, this means using open and not proprietary data formats. For spatial data, <a href="https://en.wikipedia.org/wiki/Shapefile">ESRI shapefiles</a> are technically proprietary, though their standard is open. This means that other software applications, like <code>R</code>, QGIS, and even Stata can read and in some cases write shapefiles. For sharing spatial data, a better option is the <a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a>, which is a plain text file format.</p>
-<p>Tabular data are best stored as <code>CSV</code> files, which is also a plain text file format that can be opened by a wide variety of applications. In contrast, common file formats like Microsoft Excels’s <code>XLS</code> and <code>XLSX</code> are proprietary file packages that cannot be read as plain text and are therefore less desirable for storing data.</p>
-<p>Both tabular and spatial data, in their final forms, should be what we consider “tidy data”<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> Tidy data are defined by a number of common attributes - each column represents a single variable or attribute and each row represents a single, unique observation. This arrangement should produce clear, easy to read datasets that represent a single observational unit.</p>
-<p>Tidy datasets also have other characteristics. Variable names should be short, clear, and self-explanatory (i.e. <code>streetAddress</code> and <code>zipCode</code> are preferable to <code>add1</code> and <code>add2</code>). Missing data should be properly declared in a machine-readable format instead of using a code like <code>-1</code> or <code>9999</code>. Filenames should also be clear and self-explanatory (i.e. <code>stlouisHomes_011717.csv</code> is preferable to <code>final.csv</code>).</p>
+<div id="using-snippets" class="section level2">
+<h2><span class="header-section-number">6.3</span> Using Snippets</h2>
+<p>One of the advantages of working with Atom is that it has a powerful set of autocomplete tools. One aspect of these tools are what Atom calls “snippets”. These are blocks of text or code that can be expanded with a short trigger phrase called a “prefix”. The <a href="https://github.com/slu-soc5650/week-02"><code>week-02</code></a> repository contains a file with several snippets for both Stata and Markdown files.</p>
+<div id="installing-snippets" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Installing Snippets</h3>
+<p>To install these snippets, open up the file <code>atomSnippets.cson</code> in Atom. Then go to File &gt; Snippets. The <code>snippets.cson</code> file will open. Any valid snippets saved here will be accessible to you when their associated programming language is activated in Atom. So, snippets for GitHub Markdown are only available when GitHub Markdown is selected, and snippets for Stata are only available when Stata is selected. Copy and paste the contents of <code>atomSnippets.cson</code> into <code>snippets.cson</code> beginning on a new line of the file. Save <code>snippets.cson</code>, close all open tabs, and restart Atom.</p>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="8">
-<li id="fn8"><p>Wickham, H., 2014. Tidy Data. <em>Journal of Statistical Software</em>, 59(i10).<a href="data-management.html#fnref8">↩</a></p></li>
-</ol>
+<div id="expanding-snippets" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Expanding Snippets</h3>
+<p>To use a snippet, you’ll want to change the programming language to the appropriate selection. Begin typing the prefix for your snippet, and a dropdown menu will appear. For example, typing <code>hea</code> in a Stata file when you are using our class snippets will bring up the following options:</p>
+<p><img src="images/atomSnippet.png" width="100%" /></p>
+<p>The green arrow icon indicates that the option is a snippet. No icon indicates that Atom is offering the full spelling of what it thinks is the appropriate word - “head” in this case. The blue “b” icon indicates a possible Stata command (this functionality is only available when the language is set to Stata).</p>
+<p>You can use the up and down arrow keys to select a snippet from this list. Hit the Enter key for the selected snippet, and the snippet will expand into your file.</p>
+</div>
+<div id="using-tab-stops" class="section level3">
+<h3><span class="header-section-number">6.3.3</span> Using Tab Stops</h3>
+<p>Both of the primary snippets for this class include spaces for your to customize their content after you have expanded them. Once a snippet is expanded, the cursor will be automatically directed to the first tab stop. In the Stata snippet, that is a space to give your do-file a title:</p>
+<p><img src="images/atomHead.png" width="100%" /></p>
+<p><em>Without clicking anywhere</em> with your mouse, begin typing. Atom will replace the placeholder text with what you type:</p>
+<p><img src="images/atomHead2.png" width="100%" /></p>
+<p>When you are done typing, hit the <code>Tab</code> key to be directed to the next tab stop. Continue typing and using the <code>Tab</code> key to move through the template.</p>
+<p>If you loose the Tab functionality for whatever reason, make sure you remove the <code>/*</code> and <code>*/</code> fences that sit on either side of the placeholder text. For Stata in particular, leaving these behind may cause errors or unexpected output.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="protecting-your-work.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="creating-a-sustainable-file-system.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="languages.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="using-panes.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
