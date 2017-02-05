@@ -1,3 +1,204 @@
-# Final Words
+# Reproducible Do-Files
 
-We have finished a nice book.
+Do-files are scripts containing Stata code that can be used to execute a number of Stata commands in order. These provide significant advantages for researchers, making it easy to edit and adapt data cleaning and analysis processes. Finding an error in an analysis does not necessitate recreating hours of work. Instead, do-files allow researchers to quickly update the source of an error and re-execute the code. A do-file could be as simple as two lines of code:
+
+```stata
+generate z = x + y + 2
+rename z zed
+```
+
+Alternatively, large projects may necessitate hundreds or even thousands of lines of code spread out over multiple do-files.
+
+There are some specific strategies that we can use to make our do-files serve not just a utilitarian function of executing code but also serve a larger purpose of increased reproducibility. The Stata snippet that we are using this semester in Atom is designed to incorporate these streategies. It will automatically create a series of subfolders in your working directory that contain a copy of the code you have executed, a copy of the raw data, a copy of the clean data, the log files, and any output you create.
+
+The first section of this chapter gives the minimum amount of detail about using the snippet. If you want to make sure you are using the snippet correctly but are less concerned about how all the code works, just read this section.
+
+The subsequent sections breaks down the code in the snippet itself. If you want to know how all the code works, read these sections as well.
+
+## Using the Stata Snippet
+
+The Stata snippet in Atom is named `headFull`. Once you switch a new document's programming language to `Stata` and expand the `headFull` snippet, you can use the `Tab` stops to edit some key aspects of the file:
+
+  - line 3 - enter a title for your file - this should be a short, several word description that allows you to quickly identify a file's purpose.
+  - line 9 - enter a project name - this should also be short and should not contain any spaces or special characters. Make sure when you save your do-file that its filename matches the project name entered here. So, for example, if the project's name is `editZ`, the do-file's name should be `editZ.do`.
+  - line 44 - enter a title for your analysis - for this class, this will most often be something to the effect of "Lab-01" or "Problem Set 01".
+  - line 46 - enter your name
+  - line 47 - enter today's date
+  - line 50 - enter a longer description of what this file accomplishes. This should describe in detail the goal of this file and what steps or tasks it accomplishes.
+  - line 70 - enter the name of the raw data file *with its file extension*. Depending on how long the project description is, this may be several lines below line 70.
+
+Particularly early in the semester, it may be hard to come up with the right infromation for some of these prompts. Rememeber to *fully* read the assignment directions and prompts as you develop a plan for approaching the assignment. If you do this, you will get a better sense of the ultimate goal of the assignment and will therefore have an easier time answering these questions.
+
+As I noted in the "Introduction to Atom" chapter, if you lose the `Tab` stop functionality, you will need to manually replace the placeholder text on each of the aforementioned lines. Make sure you remove the `/*` and `*/` fences that sit on either side of the placeholder text. For Stata in particular, leaving these behind may cause errors or unexpected output.
+
+When you save your do-file, make sure you save it to the working directory where you have also copied the raw data and where you plan to house output created by the do-file.
+
+## Snippet Details: Header
+
+The top of the do-file snippet, which we'll refer to as the "header", is designed to create a clean environment for executing code in Stata and for saving output in your file system. The file begins with the title block described in the previous section and an area that defines the "project name". This project name is stored in what Stata calls a **local macro**, an object that store information that can be recalled later and utilized. In the snippet, the local macro is named `projName`:
+
+```stata
+// ==========================================================================
+
+// define project name
+
+local projName "projectName"
+
+// ==========================================================================
+```
+
+The next block of commands is to ensure that there are no holdovers from previous analyses in your Stata session. Most of these options are recommended by Long (2009).
+
+```stata
+// ==========================================================================
+
+// standard opening options
+
+log close _all
+graph drop _all
+clear all
+set more off
+set linesize 80
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+```
+
+The `log close _all` command closes any currently opening logs, ensuring that your do-file stack does not unintentionally edit any files. Similarly, the `graph drop _all` closes the graph window and the `clear all` command clears any other results or data stored in Stata's memory. The final two commands turn off the "more behavior" that limits the amount of output displayed by Stata (`set more off`) and contrains the output width to 80 spaces (`set linesize 80`).
+
+After the environment within Stata is scrubbed, the snippet creates a series of subdirectories within your working directory.
+
+```stata
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// construct directory structure for tabular data
+
+capture mkdir "CodeArchive"
+capture mkdir "DataClean"
+capture mkdir "DataRaw"
+capture mkdir "LogFile"
+capture mkdir "Output"
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+```
+
+You will note that both the `mkdir` commands here are preceded with `capture`. The `capture` command will suppress any errors returned by the subsequent command and allow the do-file to continue executing. Used alone, the `mkdir` command will generate an error if a directory already exists with that name.
+
+Finally, the header of the do-file begins logging the do-file's commands and output. Two log files are created. One is a plain text log file that is retained as part of your project's documentation. The second is a specially formatted type of output called a "smickle" file. It uses a special type of Stata syntax called [SMCL](http://www.stata.com/manuals14/psmcl.pdf) to generate structured and formatted output. 
+
+```stata
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// create permanent text-based log file
+log using "LogFile/`projName'.txt", replace text name(permLog)
+
+// create temporary smcl log file for MarkDoc
+quietly log using "LogFile/`projName'.smcl", replace smcl name(tempLog)
+
+// ==========================================================================
+```
+
+That package that we will use this semester, Markdoc, relies on the temporary SMCL log file to generate Markdown formatted output. Notice that both of these commands refer to the project name **local macro** that we created earlier in the file. This is example of recalling previously stored information. If we wanted to change the name of the project and were not using a local macro, we would also have to change these two lines. However, because we used a local macro, changing the project name on line 9 will automatically result in changes to these filenames the next time the do-file is executed.
+
+## Snippet Details: Body
+
+Once the log files are turned on, everything that is entered will be passed on to them. In addition to including the basic information like name, date, assignment, and a description of the code, the do-file snippet also contains some information about the software dependences that are required for your code to work.
+
+```stata
+### Dependencies
+This do-file was written and executed using Stata 14.2.
+
+It also uses the latest [MarkDoc](https://github.com/haghish/markdoc/wiki)
+package via GitHub as well as the latest versions of its dependencies:
+***/
+
+version 14
+which markdoc
+which weave
+which statax
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+```
+
+The `version` command signals to Stata that this code was written for version 14 of the software. When running it under a future release (such as version 15 or 16), Stata will function as if it were running the older version 14. The `which` commands confirm that three packages are currently installed: `Markdoc`, `Weaver`, and `Statax`. `Markdoc` is the main tool that we'll use this semester to create do-files written in the style of literate programming. It in turn requires two other packages to function (`Weaver` and `Statax`).
+
+After confirming that all of the necessary dependencies, the do-file template then uses another **local macro** to store the name of the raw data you are working on. As with the project name above, storing the raw data file's name this way makes editing code easier.
+
+```stata
+/***
+### Import/Open Data
+***/
+
+local rawData "/*enter data file name with extension*/"
+```
+
+After this local, there is space reserved for you to enter your own commands along with narrative describing their function and their results. After you have completed this task, the do-file is structured to save the clean data in two formats: the Stata `.dta` file format and as a plain text `.csv` file.
+
+```stata
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/***
+### Save and Export Clean Data
+***/
+
+save "DataClean/`projName'.dta", replace
+export delimited "DataClean/`projName'.csv", replace
+
+// ==========================================================================
+```
+
+This ensures that your data are ready to be brought into ArcGIS, but you can also easily pick up editing them in Stata if necessary.
+
+## Snippet Details: Footer
+
+Once the data are saved, it is time to wrap up the do-file's process. The first task in terms of ending our work is creating the markdown output that can be posted onto GitHub as part of an assignment's deliverables.
+
+```stata
+// ==========================================================================
+
+// end MarkDoc log
+
+/*
+quietly log close tempLog
+*/
+
+// convert MarkDoc log to Markdown
+
+markdoc "LogFile/`projName'", replace export(md)
+copy "LogFile/`projName'.md" "Output/`projName'.md", replace
+shell rm -R "LogFile/`projName'.md"
+shell rm -R "LogFile/`projName'.smcl"
+
+// ==========================================================================
+```
+
+The `markdoc` command takes the SMCL log file and converts its contents into markdown formatted text containing commands, output, and narrative text. Once this file is created, it is copied into the `Output` directory using the `copy` command with the `replace` option. This option is critical for being able to re-execute code without returning errors that a file with that name already exists at the location. 
+
+The SMCL log file and the original markdown file that was copied are then both deleted. It is worth noting that Stata has limited facilities for deleting content it creates. Its (limited) capacity to delete files and directories also varies by operating system. In order to accomplish the deletion of these two files in a way that works on both Windows and macOS operating systems, we need to invoke the operating system itself with the `shell` command. What follows the `shell` command in each case is actually an instruction to the operating system itself. In both Windows and macOS, the `rm` command with the `-R` (recursive) option will permanently delete a file.
+
+With unneeded files removed, we can archive our code and raw data using the same `copy` command use above.
+
+```stata
+// ==========================================================================
+
+// archive code and raw data
+
+copy "`projName'.do" "CodeArchive/`projName'.do", replace
+copy "`rawData'" "DataRaw/`rawData'", replace
+
+// ==========================================================================
+```
+
+After the code are archived, the snippet is structured to close both the log file and the graph window (if it is open). It also re-sets the `more` behavior so that it will occur if Stata is subsequently used in interactive mode. Finally, the `exit` command is issued to explicitly end the execution of the do-files.
+
+```stata
+// ==========================================================================
+// standard closing options
+
+log close _all
+graph drop _all
+set more on
+
+// ==========================================================================
+
+exit
+```
