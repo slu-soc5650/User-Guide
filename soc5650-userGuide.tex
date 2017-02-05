@@ -31,6 +31,46 @@
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
 \bibliographystyle{apalike}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -41,6 +81,9 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 \IfFileExists{parskip.sty}{%
 \usepackage{parskip}
 }{% else
@@ -1712,6 +1755,650 @@ assignment directories for that week, and your assignment repository all
 close at hand. This will allow you to easily access example and
 reference materials, edit assignment files, and copy assignment files
 directly into your assignment repository for submission.
+
+\chapter{Reproducible Do-Files}\label{reproducible-do-files}
+
+Do-files are scripts containing Stata code that can be used to execute a
+number of Stata commands in order. These provide significant advantages
+for researchers, making it easy to edit and adapt data cleaning and
+analysis processes. Finding an error in an analysis does not necessitate
+recreating hours of work. Instead, do-files allow researchers to quickly
+update the source of an error and re-execute the code. A do-file could
+be as simple as two lines of code:
+
+\begin{verbatim}
+generate z = x + y + 2
+rename z zed
+\end{verbatim}
+
+Alternatively, large projects may necessitate hundreds or even thousands
+of lines of code spread out over multiple do-files.
+
+There are some specific strategies that we can use to make our do-files
+serve not just a utilitarian function of executing code but also serve a
+larger purpose of increased reproducibility. The Stata snippet that we
+are using this semester in Atom is designed to incorporate these
+streategies. It will automatically create a series of subfolders in your
+working directory that contain a copy of the code you have executed, a
+copy of the raw data, a copy of the clean data, the log files, and any
+output you create.
+
+The first section of this chapter gives the minimum amount of detail
+about using the snippet. The second section describes the process for
+``weaving'' code and narrative text. If you want to make sure you are
+using the snippet correctly but are less concerned about how all the
+code works, just read these two sections.
+
+The subsequent three sections break down the code in the snippet itself.
+If you want to know how all the code works, read these sections as well.
+
+\section{Using the Stata Snippet}\label{using-the-stata-snippet}
+
+The Stata snippet in Atom is named \texttt{headFull}. Once you switch a
+new document's programming language to \texttt{Stata} and expand the
+\texttt{headFull} snippet, you can use the \texttt{Tab} stops to edit
+some key aspects of the file:
+
+\begin{itemize}
+\tightlist
+\item
+  line 3 - enter a title for your file - this should be a short, several
+  word description that allows you to quickly identify a file's purpose.
+\item
+  line 9 - enter a project name - this should also be short and should
+  not contain any spaces or special characters. Make sure when you save
+  your do-file that its filename matches the project name entered here.
+  So, for example, if the project's name is \texttt{editZ}, the
+  do-file's name should be \texttt{editZ.do}.
+\item
+  line 44 - enter a title for your analysis - for this class, this will
+  most often be something to the effect of ``Lab-01'' or ``Problem Set
+  01''.
+\item
+  line 46 - enter your name
+\item
+  line 47 - enter today's date
+\item
+  line 50 - enter a longer description of what this file accomplishes.
+  This should describe in detail the goal of this file and what steps or
+  tasks it accomplishes.
+\item
+  line 70 - enter the name of the raw data file \emph{with its file
+  extension}. Depending on how long the project description is, this may
+  be several lines below line 70.
+\end{itemize}
+
+Particularly early in the semester, it may be hard to come up with the
+right infromation for some of these prompts. Rememeber to \emph{fully}
+read the assignment directions and prompts as you develop a plan for
+approaching the assignment. If you do this, you will get a better sense
+of the ultimate goal of the assignment and will therefore have an easier
+time answering these questions.
+
+As I noted in the ``Introduction to Atom'' chapter, if you lose the
+\texttt{Tab} stop functionality, you will need to manually replace the
+placeholder text on each of the aforementioned lines. Make sure you
+remove the \texttt{/*} and \texttt{*/} fences that sit on either side of
+the placeholder text. For Stata in particular, leaving these behind may
+cause errors or unexpected output.
+
+When you save your do-file, make sure you save it to the working
+directory where you have also copied the raw data and where you plan to
+house output created by the do-file.
+
+\section{Weaving Do-files}\label{weaving-do-files}
+
+The workflow described here is largely adapted from the standard setting
+\texttt{knitr} package for \texttt{R}.\footnote{See Xie, Y., 2015.
+  Dynamic Documents with R and knitr (Vol. 29). CRC Press.} In the
+center of the snippet at line 72, you will see this message:
+
+\begin{verbatim}
+/* continue adding narrative and code chunks here */
+\end{verbatim}
+
+Depending on how long the project description is, this may be several
+lines below line 72. This is where you want to begin entering the
+commands that are specific to the task you are working on completing.
+
+The \texttt{Markdoc} package, as I have already noted, will combine your
+Stata commands, output, and narrative text into a single markdown file.
+This ``weaving'' of various sources produces code that can be read and
+executed by a computer, but is annotated in such a way that a human can
+easily understand its functionality. Narrative text can also be used to
+produce a document that purposely links code with output and
+description. In essence, you are writing the results section of a paper
+along with the code and output that produce it.
+
+A typical combination of these items will look like this:
+
+\begin{verbatim}
+sysuse census.dta
+
+/***
+**1.** The `sysuse` command opens up pre-installed datasets that come with Stata. 
+The `census.dta` file contains demographic characteristics for all fifty states.
+***/
+
+summarize pop
+
+/***
+**2.** The `summarize` command produces descriptive statistics for the variable 
+`pop`. The mean  population for a U.S. state is 4.5 million persons, though there 
+is considerable variability between states like Alaska with just over 400,000 persons 
+to states like California with over 23 million persons.
+***/
+\end{verbatim}
+
+Note how the commands precede any narrative text. Also note how
+narrative text is wrapped in two ``fences''. These fences, \texttt{/***}
+and \texttt{***/}, indicate to \texttt{markdoc} that the text should be
+included in the final output.
+
+Once the do-file is fully executed, output will be added to the document
+as well:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\BaseNTok{          . summarize pop}
+\BaseNTok{          (1980 Census data by state)}
+\BaseNTok{          }
+\NormalTok{**1.** The }\BaseNTok{`sysuse`} \NormalTok{command opens up pre-installed datasets that come with Stata. The }
+\BaseNTok{`census.dta`} \NormalTok{file contains demographic characteristics for all fifty states.}
+
+\BaseNTok{          . summarize pop}
+
+\BaseNTok{              Variable |        Obs        Mean    Std. Dev.       Min        Max}
+\NormalTok{          -------------+---------------------------------------------------------}
+\BaseNTok{                   pop |         50     4518149     4715038     401851   2.37e+07}
+
+\NormalTok{**2.** The }\BaseNTok{`summarize`} \NormalTok{command produces descriptive statistics for the variable }\BaseNTok{`pop`}\NormalTok{. }
+\NormalTok{The mean population for a U.S. state is 4.5 million persons, though there is }
+\NormalTok{considerable variability between states like Alaska with just over 400,000 persons }
+\NormalTok{to states like California with over 23 million persons.}
+\end{Highlighting}
+\end{Shaded}
+
+To write the narrative correctly, it is necessary to preview the output
+by testing commands interactively in Stata until they produce the
+desired result. This gives you a chance to test all of your code, which
+will cut down on time spent debugging later, but will also give you the
+information you need to write the narrative sections.
+
+\section{Snippet Details: Header}\label{snippet-details-header}
+
+The top of the do-file snippet, which we'll refer to as the ``header'',
+is designed to create a clean environment for executing code in Stata
+and for saving output in your file system. The file begins with the
+title block described in the previous section and an area that defines
+the ``project name''. This project name is stored in what Stata calls a
+\textbf{local macro}, an object that store information that can be
+recalled later and utilized. In the snippet, the local macro is named
+\texttt{projName}:
+
+\begin{verbatim}
+// ==========================================================================
+
+// define project name
+
+local projName "projectName"
+
+// ==========================================================================
+\end{verbatim}
+
+The next block of commands is to ensure that there are no holdovers from
+previous analyses in your Stata session. Most of these options are
+recommended by Long (2009).
+
+\begin{verbatim}
+// ==========================================================================
+
+// standard opening options
+
+log close _all
+graph drop _all
+clear all
+set more off
+set linesize 80
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\end{verbatim}
+
+The \texttt{log\ close\ \_all} command closes any currently opening
+logs, ensuring that your do-file stack does not unintentionally edit any
+files. Similarly, the \texttt{graph\ drop\ \_all} closes the graph
+window and the \texttt{clear\ all} command clears any other results or
+data stored in Stata's memory. The final two commands turn off the
+``more behavior'' that limits the amount of output displayed by Stata
+(\texttt{set\ more\ off}) and contrains the output width to 80 spaces
+(\texttt{set\ linesize\ 80}).
+
+After the environment within Stata is scrubbed, the snippet creates a
+series of subdirectories within your working directory.
+
+\begin{verbatim}
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// construct directory structure for tabular data
+
+capture mkdir "CodeArchive"
+capture mkdir "DataClean"
+capture mkdir "DataRaw"
+capture mkdir "LogFile"
+capture mkdir "Output"
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\end{verbatim}
+
+You will note that both the \texttt{mkdir} commands here are preceded
+with \texttt{capture}. The \texttt{capture} command will suppress any
+errors returned by the subsequent command and allow the do-file to
+continue executing. Used alone, the \texttt{mkdir} command will generate
+an error if a directory already exists with that name.
+
+Finally, the header of the do-file begins logging the do-file's commands
+and output. Two log files are created. One is a plain text log file that
+is retained as part of your project's documentation. The second is a
+specially formatted type of output called a ``smickle'' file. It uses a
+special type of Stata syntax called
+\href{http://www.stata.com/manuals14/psmcl.pdf}{SMCL} to generate
+structured and formatted output.
+
+\begin{verbatim}
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// create permanent text-based log file
+log using "LogFile/`projName'.txt", replace text name(permLog)
+
+// create temporary smcl log file for MarkDoc
+quietly log using "LogFile/`projName'.smcl", replace smcl name(tempLog)
+
+// ==========================================================================
+\end{verbatim}
+
+That package that we will use this semester, Markdoc, relies on the
+temporary SMCL log file to generate Markdown formatted output. Notice
+that both of these commands refer to the project name \textbf{local
+macro} that we created earlier in the file. This is example of recalling
+previously stored information. If we wanted to change the name of the
+project and were not using a local macro, we would also have to change
+these two lines. However, because we used a local macro, changing the
+project name on line 9 will automatically result in changes to these
+filenames the next time the do-file is executed.
+
+\section{Snippet Details: Body}\label{snippet-details-body}
+
+Once the log files are turned on, everything that is entered will be
+passed on to them. In addition to including the basic information like
+name, date, assignment, and a description of the code, the do-file
+snippet also contains some information about the software dependences
+that are required for your code to work.
+
+\begin{verbatim}
+### Dependencies
+This do-file was written and executed using Stata 14.2.
+
+It also uses the latest [MarkDoc](https://github.com/haghish/markdoc/wiki)
+package via GitHub as well as the latest versions of its dependencies:
+***/
+
+version 14
+which markdoc
+which weave
+which statax
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\end{verbatim}
+
+The \texttt{version} command signals to Stata that this code was written
+for version 14 of the software. When running it under a future release
+(such as version 15 or 16), Stata will function as if it were running
+the older version 14. The \texttt{which} commands confirm that three
+packages are currently installed: \texttt{Markdoc}, \texttt{Weaver}, and
+\texttt{Statax}. \texttt{Markdoc} is the main tool that we'll use this
+semester to create do-files written in the style of literate
+programming. It in turn requires two other packages to function
+(\texttt{Weaver} and \texttt{Statax}).
+
+After confirming that all of the necessary dependencies, the do-file
+template then uses another \textbf{local macro} to store the name of the
+raw data you are working on. As with the project name above, storing the
+raw data file's name this way makes editing code easier.
+
+\begin{verbatim}
+/***
+### Import/Open Data
+***/
+
+local rawData "/*enter data file name with extension*/"
+\end{verbatim}
+
+After this local, there is space reserved for you to enter your own
+commands along with narrative describing their function and their
+results. After you have completed this task, the do-file is structured
+to save the clean data in two formats: the Stata \texttt{.dta} file
+format and as a plain text \texttt{.csv} file.
+
+\begin{verbatim}
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/***
+### Save and Export Clean Data
+***/
+
+save "DataClean/`projName'.dta", replace
+export delimited "DataClean/`projName'.csv", replace
+
+// ==========================================================================
+\end{verbatim}
+
+This ensures that your data are ready to be brought into ArcGIS, but you
+can also easily pick up editing them in Stata if necessary.
+
+\section{Snippet Details: Footer}\label{snippet-details-footer}
+
+Once the data are saved, it is time to wrap up the do-file's process.
+The first task in terms of ending our work is creating the markdown
+output that can be posted onto GitHub as part of an assignment's
+deliverables.
+
+\begin{verbatim}
+// ==========================================================================
+
+// end MarkDoc log
+
+/*
+quietly log close tempLog
+*/
+
+// convert MarkDoc log to Markdown
+
+markdoc "LogFile/`projName'", replace export(md)
+copy "LogFile/`projName'.md" "Output/`projName'.md", replace
+shell rm -R "LogFile/`projName'.md"
+shell rm -R "LogFile/`projName'.smcl"
+
+// ==========================================================================
+\end{verbatim}
+
+The \texttt{markdoc} command takes the SMCL log file and converts its
+contents into markdown formatted text containing commands, output, and
+narrative text. Once this file is created, it is copied into the
+\texttt{Output} directory using the \texttt{copy} command with the
+\texttt{replace} option. This option is critical for being able to
+re-execute code without returning errors that a file with that name
+already exists at the location.
+
+The SMCL log file and the original markdown file that was copied are
+then both deleted. It is worth noting that Stata has limited facilities
+for deleting content it creates. Its (limited) capacity to delete files
+and directories also varies by operating system. In order to accomplish
+the deletion of these two files in a way that works on both Windows and
+macOS operating systems, we need to invoke the operating system itself
+with the \texttt{shell} command. What follows the \texttt{shell} command
+in each case is actually an instruction to the operating system itself.
+In both Windows and macOS, the \texttt{rm} command with the \texttt{-R}
+(recursive) option will permanently delete a file.
+
+With unneeded files removed, we can archive our code and raw data using
+the same \texttt{copy} command use above.
+
+\begin{verbatim}
+// ==========================================================================
+
+// archive code and raw data
+
+copy "`projName'.do" "CodeArchive/`projName'.do", replace
+copy "`rawData'" "DataRaw/`rawData'", replace
+
+// ==========================================================================
+\end{verbatim}
+
+After the code are archived, the snippet is structured to close both the
+log file and the graph window (if it is open). It also re-sets the
+\texttt{more} behavior so that it will occur if Stata is subsequently
+used in interactive mode. Finally, the \texttt{exit} command is issued
+to explicitly end the execution of the do-files.
+
+\begin{verbatim}
+// ==========================================================================
+// standard closing options
+
+log close _all
+graph drop _all
+set more on
+
+// ==========================================================================
+
+exit
+\end{verbatim}
+
+\chapter{Introduction to Markdown}\label{introduction-to-markdown}
+
+Markdown is a simple
+\href{https://en.wikipedia.org/wiki/Markup_language}{markup language}.
+Markup languages are used to give computer programs directions on how
+particular blocks of text should be processed. Markdown was developed in
+2004 by writer and developer \href{http://daringfireball.net}{John
+Gruber}. Gruber describes Markdown on his
+\href{http://daringfireball.net/projects/markdown/}{website}:
+
+\begin{quote}
+Markdown is intended to be as easy-to-read and easy-to-write as is
+feasible.
+\end{quote}
+
+\begin{quote}
+Readability, however, is emphasized above all else. A Markdown-formatted
+document should be publishable as-is, as plain text, without looking
+like it's been marked up with tags or formatting instructions. While
+Markdown's syntax has been influenced by several existing text-to-HTML
+filters --- including Setext, atx, Textile, reStructuredText, Grutatext,
+and EtText --- the single biggest source of inspiration for Markdown's
+syntax is the format of plain text email.
+\end{quote}
+
+\begin{quote}
+To this end, Markdown's syntax is comprised entirely of punctuation
+characters, which punctuation characters have been carefully chosen so
+as to look like what they mean. E.g., asterisks around a word actually
+look like \emph{emphasis}. Markdown lists look like, well, lists. Even
+blockquotes look like quoted passages of text, assuming you've ever used
+email\ldots{}
+\end{quote}
+
+\begin{quote}
+\ldots{}Markdown's syntax is intended for one purpose: to be used as a
+format for writing for the web.
+\end{quote}
+
+\section{Markdown Syntax}\label{markdown-syntax}
+
+As markup syntaxes go, Markdown is exceptionally straight forward. The
+following sections include examples of syntax used to create Markdown
+documents. These are specific to what is called GitHub Markdown - there
+are some subtle differences in the way GitHub uses Markdown formatting.
+
+\subsection{Headings}\label{headings}
+
+Markdown contains six heading levels. Headings are identified with
+\texttt{\#} symbols:
+
+\begin{quote}
+\chapter{This is the largest heading}\label{this-is-the-largest-heading}
+
+\section{This is the second largest
+heading}\label{this-is-the-second-largest-heading}
+
+\mbox{}%
+\subparagraph{This is the smallest
+heading}\label{this-is-the-smallest-heading}
+\end{quote}
+
+\subsection{New Paragraphs}\label{new-paragraphs}
+
+Leave a blank line between two lines of text to create a new paragraph.
+
+\subsection{Styling Text}\label{styling-text}
+
+Text can be styled using bold, italics, and strikethroughs. To create
+italicized text, wrap your text with a single asterisk \texttt{*\ *}. To
+create bold text, wrap your text with double asterisks \texttt{**\ **}.
+To create strikethrough text, wrap your text with two tildes
+\texttt{\textasciitilde{}\textasciitilde{}\ \textasciitilde{}\textasciitilde{}}.
+
+\begin{quote}
+\emph{This is an italicized sentence.}
+\end{quote}
+
+\begin{quote}
+\textbf{This is a bolded sentence.}
+\end{quote}
+
+\begin{quote}
+\sout{This is a sentence with strikethrough text}
+\end{quote}
+
+\subsection{Quoting Text}\label{quoting-text}
+
+Quoting text (which I have used above to illustrate examples) is done
+with a greater then symbol \texttt{\textgreater{}}.
+
+\subsection{Quoting Code}\label{quoting-code}
+
+There are two types of code quotes in Markdown. In-line quotes, which
+are included in a sentence, are wrapped in single backticks:
+\textgreater{} Use the \texttt{describe} command to list variables in
+Stata.
+
+To include code blocks, which are better for including the full syntax
+of particular commands and their output, use triple backticks:
+
+\begin{verbatim}
+. describe make price mpg
+
+              storage   display    value
+variable name   type    format     label      variable label
+--------------------------------------------------------------------------------
+make            str18   %-18s                 Make and Model
+price           int     %8.0gc                Price
+mpg             int     %8.0g                 Mileage (mpg)
+\end{verbatim}
+
+Note how the word `Stata' is written after the first set of triple
+backticks. This is an indicator for GitHub that the code is written in
+Stata's programming language. By including this, GitHub can apply some
+syntax highlighting to your files. This makes them easier to read.
+
+\subsection{Links}\label{links}
+
+In Markdown, adding hyperlinks is a two step process. The text that you
+want to have hyperlinked is written first and is wrapped in brackets
+\texttt{{[}{]}}. After this, you include the URL wrapped in parentheses
+\texttt{()}. This is an example of including in-line hyperlinks:
+
+\begin{quote}
+The course \href{https://github.com/slu-soc5050}{website} is hosted
+using the service \href{https://github.com}{GitHub}.
+\end{quote}
+
+\subsection{Embedding Images}\label{embedding-images}
+
+Within the directory that contains your Markdown file, create a
+subdirectory called \texttt{Output}. Save all images for a particular
+assignment there. In your main assignment Markdown file, include a
+hyperlink reference:
+
+Note how, instead of including text to be hyperlinked, we suppress this
+aspect of the syntax by using an exclamation point \texttt{!}.
+
+\subsection{Simple Lists}\label{simple-lists}
+
+Bulleted lists are indicated in Markdown using the dash \texttt{-} or a
+single asterisk \texttt{*}:
+
+\begin{quote}
+\begin{itemize}
+\tightlist
+\item
+  mean
+\item
+  median
+\item
+  mode
+\item
+  variance
+\item
+  standard deviation
+\end{itemize}
+\end{quote}
+
+Enumerated lists are created by preceding each line with the appropriate
+number:
+
+\begin{quote}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  calculate the mean
+\item
+  calculate the variance
+\item
+  calculate the standard deviation
+\end{enumerate}
+\end{quote}
+
+You can create more complex lists by preceding a line with two single
+spaces. You can also combine bulleted and enumerated lists when using
+this approach.
+
+\subsection{Task Lists}\label{task-lists}
+
+If you want to create task lists on GitHub, you can include brackets
+separated by a space before each list item \texttt{{[}\ {]}}. Completed
+tasks include an \texttt{x} in place of the space \texttt{{[}x{]}}.
+These task lists are interactive - when published on GitHub, you can
+click on the resulting checkboxes to toggle them between complete /
+incomplete.
+
+\begin{quote}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  {[}x{]} calculate the mean
+\item
+  {[} {]} calculate the variance
+\item
+  {[} {]} calculate the standard deviation
+\end{enumerate}
+\end{quote}
+
+\subsection{Mentioning Other GitHub
+Users}\label{mentioning-other-github-users}
+
+If you want to mention me or one of your classmates in a comment,
+include the \texttt{@} symbol before their username:
+
+\begin{quote}
+Hey \citet{chris-prener}, thanks for the feedback. I made the changes to
+lines 40 and 41.
+\end{quote}
+
+Once the document is uploaded to GitHub, the username will render as a
+hyperlink and the user will be alerted.
+
+\section{Markdown and Stata}\label{markdown-and-stata}
+
+\section{Markdown and Atom}\label{markdown-and-atom}
+
+If you write your Markdown documents in Atom, you can use the Markdown
+Preview package to generate an interactive preview of your document. As
+you type, the preview will update. To open this preview in a tab, go to
+\texttt{Packages\ \textgreater{}\ Markdown\ Preview\ \textgreater{}\ Toggle\ Preview}
+in Atom.
 
 \bibliography{packages.bib,book.bib}
 
