@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="creating-a-sustainable-file-system.html">
-<link rel="next" href="introduction-to-github.html">
+<link rel="prev" href="introduction-to-markdown.html">
+<link rel="next" href="markdown-and-stata.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -228,48 +228,114 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="backing-up-your-data" class="section level2">
-<h2><span class="header-section-number">4.3</span> Backing Up Your Data</h2>
-<p>There are a number of different ways to think about backing up your data. The most successful backup strategies will incorporate all of these elements.</p>
-<div id="bootable-backups" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> Bootable Backups</h3>
-<p>“Bootable” backups are mirrored images of your <em>entire</em> hard drive, down to temporary files, icons, and system files. With a bootable backup, you can restore your entire computer in the event of a hard drive failure or a corruption of the operating system files. They are named as such because you can plug in the external drive that you are using for this backup and literally boot your computer up from that drive (typically a <em>very</em> slow process).</p>
-<p>These backups are often made less frequently because they can be resource intensive and it is best not to use your operating system while creating a clone. They are typically made to an external hard drive, which is subject to similar failure rates as the hard drives inside your computer. So bootable drives need to be replaced every few years to maintain their reliability.</p>
-<p>Both major operating systems come with applications for creating clones of your main hard drive that are bootable, and there are a number of third party applications that provide this service as well.</p>
+<div id="markdown-syntax" class="section level2">
+<h2><span class="header-section-number">8.1</span> Markdown Syntax</h2>
+<p>As markup syntaxes go, Markdown is exceptionally straight forward. The following sections include examples of syntax used to create Markdown documents. These are specific to what is called GitHub Markdown - there are some subtle differences in the way GitHub uses Markdown formatting.</p>
+<div id="headings" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Headings</h3>
+<p>Markdown contains six heading levels. Headings are identified with <code>#</code> symbols:</p>
+<blockquote>
+<h1 id="this-is-the-largest-heading"><span class="header-section-number">8.1.1</span> This is the largest heading</h1>
+<h2 id="this-is-the-second-largest-heading"><span class="header-section-number">8.1.1</span> This is the second largest heading</h2>
+<h6 id="this-is-the-smallest-heading"><span class="header-section-number">8.1.1</span> This is the smallest heading</h6>
+</blockquote>
 </div>
-<div id="incremental-backups" class="section level3">
-<h3><span class="header-section-number">4.3.2</span> Incremental Backups</h3>
-<p>Incremental backups are designed to keep multiple copies of a single file (how often depends on the type of software you use and the settings you select). These can be used to restore an older copy of a file if work is lost or a newer file is corrupted.</p>
-<p>Apple’s TimeMachine is a great example of an incremental backup - when kept on, it creates hourly backups of files that have been changed, daily backups for the previous month, and weekly backups for previous months. Once the disk is full, the oldest backups are deleted. Dropbox also provides a similar service, retaining all previous versions of files (and deleted files) for thirty days.</p>
-<p>Incremental backups are typically good options for recovering files that have been recently changed (again, depending on the software you use and the settings you select). Since they run frequently (every time a file is changed or every hour, for example), recent changes tend to get captured. They can be limited in terms of their long-term storage - it may not be possible to recover older versions of a file past a few weeks.</p>
-<p>They are also not always good solutions for recreating your entire computer since they do not save all necessary program and operating system files, and may be cumbersome to work with if you need to recover a large quantity of files. Like bootable backups, these are typically stored on external hard drives that need to be replaced on a regular basis.</p>
-<p>In addition to the aforementioned Apple TimeMachine, the Windows OS also comes with a built-in service for creating incremental backups. Dropbox is a good option if you have a small number of files, but you may find the need to upgrade to a paid account if you have a large amount of data.</p>
+<div id="new-paragraphs" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> New Paragraphs</h3>
+<p>Leave a blank line between two lines of text to create a new paragraph.</p>
 </div>
-<div id="cloud-backups" class="section level3">
-<h3><span class="header-section-number">4.3.3</span> Cloud Backups</h3>
-<p>Cloud backup services like <a href="https://www.backblaze.com">Backblaze</a> or <a href="https://www.code42.com/crashplan/">Crashplan</a> offer comprehensive backup solutions for customers. These plans typically require a monthly subscription fee to maintain access to your backups. While bootable backups protect against hard drive failure and incremental backups protect against data corruption, cloud backups protect against catastrophic events like robberies, fires, and other natural disasters. A fire or a tornado that affect your house may destroy your laptop and any external hard drives you use for backup, but your cloud backup will be unaffected.</p>
+<div id="styling-text" class="section level3">
+<h3><span class="header-section-number">8.1.3</span> Styling Text</h3>
+<p>Text can be styled using bold, italics, and strikethroughs. To create italicized text, wrap your text with a single asterisk <code>* *</code>. To create bold text, wrap your text with double asterisks <code>** **</code>. To create strikethrough text, wrap your text with two tildes <code>~~ ~~</code>.</p>
+<blockquote>
+<p><em>This is an italicized sentence.</em></p>
+</blockquote>
+<blockquote>
+<p><strong>This is a bolded sentence.</strong></p>
+</blockquote>
+<blockquote>
+<p><del>This is a sentence with strikethrough text</del></p>
+</blockquote>
 </div>
-<div id="a-workflow-for-backups" class="section level3">
-<h3><span class="header-section-number">4.3.4</span> A Workflow for Backups</h3>
-<p>Just as we need a workflow for approaching file management, it is also important to establish a routine for backups. With backups, the most successful workflows are those that require next to no effort on your part. If you primarily use a desktop, this can be as simple as leaving two external hard drives plugged into your computer since most backup software can be set to run automatically. If you have tasks that require you to manually do something (plug an external hard drive into your computer, for instance), create a reminder for yourself on a paper calendar or a digital calendar or to-do list application.</p>
-<p>For this course in particular, it is <em>imperative</em> that you backup the data on your flash drive. A number of possibilities exist for accomplishing this:</p>
-<ul>
-<li>Keep a local copy of your flash drive’s files on your computer.</li>
-<li>Keep a <code>.zip</code> archive of your files in a service like Dropbox or Google Drive. (Using a <code>.zip</code> archive will prevent issues with your <code>.git</code> repositories.)</li>
-<li>Maintain a second flash drive copies of all of your files.</li>
-</ul>
-<p>Whatever solution you select, make sure you regularly update your backup. The more often you keep your backup archive updated, the less stressful and disruptive losing your drive will be. This will likely be a manual task, so follow the guidance above about creating a repeating calendar event or to-do list task reminder.</p>
+<div id="quoting-text" class="section level3">
+<h3><span class="header-section-number">8.1.4</span> Quoting Text</h3>
+<p>Quoting text (which I have used above to illustrate examples) is done with a greater then symbol <code>&gt;</code>.</p>
+</div>
+<div id="quoting-code" class="section level3">
+<h3><span class="header-section-number">8.1.5</span> Quoting Code</h3>
+<p>There are two types of code quotes in Markdown. In-line quotes, which are included in a sentence, are wrapped in single backticks: &gt; Use the <code>describe</code> command to list variables in Stata.</p>
+<p>To include code blocks, which are better for including the full syntax of particular commands and their output, use triple backticks:</p>
+<pre class="stata"><code>. describe make price mpg
 
+              storage   display    value
+variable name   type    format     label      variable label
+--------------------------------------------------------------------------------
+make            str18   %-18s                 Make and Model
+price           int     %8.0gc                Price
+mpg             int     %8.0g                 Mileage (mpg)</code></pre>
+<p>Note how the word ‘Stata’ is written after the first set of triple backticks. This is an indicator for GitHub that the code is written in Stata’s programming language. By including this, GitHub can apply some syntax highlighting to your files. This makes them easier to read.</p>
+</div>
+<div id="links" class="section level3">
+<h3><span class="header-section-number">8.1.6</span> Links</h3>
+<p>In Markdown, adding hyperlinks is a two step process. The text that you want to have hyperlinked is written first and is wrapped in brackets <code>[]</code>. After this, you include the URL wrapped in parentheses <code>()</code>. This is an example of including in-line hyperlinks:</p>
+<blockquote>
+<p>The course <a href="https://github.com/slu-soc5050">website</a> is hosted using the service <a href="https://github.com">GitHub</a>.</p>
+</blockquote>
+</div>
+<div id="embedding-images" class="section level3">
+<h3><span class="header-section-number">8.1.7</span> Embedding Images</h3>
+<p>Within the directory that contains your Markdown file, create a subdirectory called <code>Output</code>. Save all images for a particular assignment there. In your main assignment Markdown file, include a hyperlink reference:</p>
+<p>Note how, instead of including text to be hyperlinked, we suppress this aspect of the syntax by using an exclamation point <code>!</code>.</p>
+</div>
+<div id="simple-lists" class="section level3">
+<h3><span class="header-section-number">8.1.8</span> Simple Lists</h3>
+<p>Bulleted lists are indicated in Markdown using the dash <code>-</code> or a single asterisk <code>*</code>:</p>
+<blockquote>
+<ul>
+<li>mean</li>
+<li>median</li>
+<li>mode</li>
+<li>variance</li>
+<li>standard deviation</li>
+</ul>
+</blockquote>
+<p>Enumerated lists are created by preceding each line with the appropriate number:</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>calculate the mean</li>
+<li>calculate the variance</li>
+<li>calculate the standard deviation</li>
+</ol>
+</blockquote>
+<p>You can create more complex lists by preceding a line with two single spaces. You can also combine bulleted and enumerated lists when using this approach.</p>
+</div>
+<div id="task-lists" class="section level3">
+<h3><span class="header-section-number">8.1.9</span> Task Lists</h3>
+<p>If you want to create task lists on GitHub, you can include brackets separated by a space before each list item <code>[ ]</code>. Completed tasks include an <code>x</code> in place of the space <code>[x]</code>. These task lists are interactive - when published on GitHub, you can click on the resulting checkboxes to toggle them between complete / incomplete.</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>[x] calculate the mean</li>
+<li>[ ] calculate the variance</li>
+<li>[ ] calculate the standard deviation</li>
+</ol>
+</blockquote>
+</div>
+<div id="mentioning-other-github-users" class="section level3">
+<h3><span class="header-section-number">8.1.10</span> Mentioning Other GitHub Users</h3>
+<p>If you want to mention me or one of your classmates in a comment, include the <code>@</code> symbol before their username:</p>
+<blockquote>
+<p>Hey <span class="citation">(<span class="citeproc-not-found" data-reference-id="chris-prener"><strong>???</strong></span>)</span>, thanks for the feedback. I made the changes to lines 40 and 41.</p>
+</blockquote>
+<p>Once the document is uploaded to GitHub, the username will render as a hyperlink and the user will be alerted.</p>
 </div>
 </div>
-<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="creating-a-sustainable-file-system.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introduction-to-github.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="introduction-to-markdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="markdown-and-stata.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
