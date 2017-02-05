@@ -11,9 +11,9 @@ Alternatively, large projects may necessitate hundreds or even thousands of line
 
 There are some specific strategies that we can use to make our do-files serve not just a utilitarian function of executing code but also serve a larger purpose of increased reproducibility. The Stata snippet that we are using this semester in Atom is designed to incorporate these streategies. It will automatically create a series of subfolders in your working directory that contain a copy of the code you have executed, a copy of the raw data, a copy of the clean data, the log files, and any output you create.
 
-The first section of this chapter gives the minimum amount of detail about using the snippet. If you want to make sure you are using the snippet correctly but are less concerned about how all the code works, just read this section.
+The first section of this chapter gives the minimum amount of detail about using the snippet. The second section describes the process for "weaving" code and narrative text. If you want to make sure you are using the snippet correctly but are less concerned about how all the code works, just read these two sections.
 
-The subsequent sections breaks down the code in the snippet itself. If you want to know how all the code works, read these sections as well.
+The subsequent three sections break down the code in the snippet itself. If you want to know how all the code works, read these sections as well.
 
 ## Using the Stata Snippet
 
@@ -32,6 +32,66 @@ Particularly early in the semester, it may be hard to come up with the right inf
 As I noted in the "Introduction to Atom" chapter, if you lose the `Tab` stop functionality, you will need to manually replace the placeholder text on each of the aforementioned lines. Make sure you remove the `/*` and `*/` fences that sit on either side of the placeholder text. For Stata in particular, leaving these behind may cause errors or unexpected output.
 
 When you save your do-file, make sure you save it to the working directory where you have also copied the raw data and where you plan to house output created by the do-file.
+
+## Weaving Do-files
+
+The workflow described here is largely adapted from the standard setting `knitr` package for `R`.^[See Xie, Y., 2015. Dynamic Documents with R and knitr (Vol. 29). CRC Press.] In the center of the snippet at line 72, you will see this message:
+
+```stata
+/* continue adding narrative and code chunks here */
+```
+
+Depending on how long the project description is, this may be several lines below line 72. This is where you want to begin entering the commands that are specific to the task you are working on completing. 
+
+The `Markdoc` package, as I have already noted, will combine your Stata commands, output, and narrative text into a single markdown file. This "weaving" of various sources produces code that can be read and executed by a computer, but is annotated in such a way that a human can easily understand its functionality. Narrative text can also be used to produce a document that purposely links code with output and description. In essence, you are writing the results section of a paper along with the code and output that produce it.
+
+A typical combination of these items will look like this:
+
+```stata
+sysuse census.dta
+
+/***
+**1.** The `sysuse` command opens up pre-installed datasets that come with Stata. 
+The `census.dta` file contains demographic characteristics for all fifty states.
+***/
+
+summarize pop
+
+/***
+**2.** The `summarize` command produces descriptive statistics for the variable 
+`pop`. The mean  population for a U.S. state is 4.5 million persons, though there 
+is considerable variability between states like Alaska with just over 400,000 persons 
+to states like California with over 23 million persons.
+***/
+```
+
+Note how the commands precede any narrative text. Also note how narrative text is wrapped 
+in two "fences". These fences, `/***` and `***/`, indicate to `markdoc` that the text 
+should be included in the final output.
+
+Once the do-file is fully executed, output will be added to the document as well:
+
+```md
+
+          . summarize pop
+          (1980 Census data by state)
+          
+**1.** The `sysuse` command opens up pre-installed datasets that come with Stata. The 
+`census.dta` file contains demographic characteristics for all fifty states.
+
+          . summarize pop
+
+              Variable |        Obs        Mean    Std. Dev.       Min        Max
+          -------------+---------------------------------------------------------
+                   pop |         50     4518149     4715038     401851   2.37e+07
+
+**2.** The `summarize` command produces descriptive statistics for the variable `pop`. 
+The mean population for a U.S. state is 4.5 million persons, though there is 
+considerable variability between states like Alaska with just over 400,000 persons 
+to states like California with over 23 million persons.
+```
+
+To write the narrative correctly, it is necessary to preview the output by testing commands interactively in Stata until they produce the desired result. This gives you a chance to test all of your code, which will cut down on time spent debugging later, but will also give you the information you need to write the narrative sections.
 
 ## Snippet Details: Header
 
