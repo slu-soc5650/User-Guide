@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="introduction-to-atom.html">
-<link rel="next" href="languages.html">
+<link rel="prev" href="even-more-git-lingo.html">
+<link rel="next" href="introduction-to-atom.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -236,32 +236,54 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="packages" class="section level2">
-<h2><span class="header-section-number">7.1</span> Packages</h2>
-<p>Packages for Atom are user-written programs that extend or expand its functionality. Atom is designed to be modular and thus can be almost endlessly customizable through the addition of various packages. When you open Atom, you can go to the Packages menu and see that some packages are already installed for you. One of these, <strong>Markdown Preview</strong>, is very helpful for getting a sense of what the Markdown syntax you are writing looks like. We’ll come back to that package in the “Introducing Markdown” chapter.</p>
-<p>New packages can be added through <code>File &gt; Preferences</code><a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>. The Packages tab will summarize all of the packages you have currently installed. These will be segregated between Core Packages, those that power the base Atom distribution you downloaded, and Community Packages, which are packages that you choose to install to extend Atom. For most packages, you have the ability to access their settings and, when necessary, install updates.</p>
-<p>The <code>Install</code> tab will allow you to search for and install those Community Packages. The following packages will be <em>required</em> for this course:</p>
-<ul>
-<li><code>language-stata</code></li>
-<li><code>linter</code></li>
-<li><code>linter-markdown</code></li>
-<li><code>pdf-view</code></li>
-<li><code>tidy-markdown</code></li>
-</ul>
+<div id="creating-branches" class="section level2">
+<h2><span class="header-section-number">6.2</span> Creating Branches</h2>
+<p>The logic behind branches is that they allow you to make modifications to the content of the repository without impacting the content that is on the <code>master</code> branch. Think of the <code>master</code> branch is your production data - this is what you know is good and in working order. If you need to experiment, say by adding new code or data sources, you can do this on a branch without worrying about breaking something in the production part of the repository.</p>
+<p>To create a new branch, navigate to the repository in question on GitHub.com. Just above the list of the repository’s contents on the lefthand side of the winodw is a button that will read “Branch: master”. If you pull the associated menu down, you have the ability to create a new branch (by typing a name into the text field) or switch between branches:</p>
+<p><img src="images/branch1.png" width="100%" /></p>
+<p>The image above shows this menu pulled down with the ficticious user John Snow creating a new branch on his assignments repository named <code>snowBranch</code>. Once the branch is created, you will automatically be directed to the new branch’s contents. These should look identical to the <code>master</code> branch at this point because the branch creation process generates a mirror image of <code>master</code>.</p>
+<p>You can use the same pulldown menu to switch back to the <code>master</code> branch if needed:</p>
+<p><img src="images/branch2.png" width="100%" /></p>
+<div id="working-with-branches" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Working with Branches</h3>
+<p>Once your branch is created, you need to open up GitHub desktop and, if you haven’t already, clone the repository you created the branch in. If you have already cloned the repository, you just need to <code>Sync</code> it so that the branch information is downloaded to your local copy of the repository.</p>
+<p>Once you have updated or cloned your repository, it is time to <strong>checkout</strong> the branch. This means to switch from the current branch (by default, the <code>master</code> branch, to your new branch). In GitHub Desktop, there is a button on the top toolbar that will say the current branch name (by default, <code>master</code>). You can click on this button to open a pulldown menu that will list all available branches:</p>
+<p><img src="images/branch3.png" width="100%" /></p>
+<p>Click on a branch to check it out. Once checked out, the files available to your operating system will change to reflect the contents of that branch!</p>
+<p>It is important that you ensure that you are always intentionally working on the correct branch. Any time you return to your computer to continue working on a branch, open up GitHub Desktop and ensure that the proper branch remains checked out.</p>
+<p>Branches are used just like regular repos in Git. You can commit changes to them and sync them with GitHub.com. I recommend commiting changes to branches regularly and syncing them with the remote version of the repository to ensure that your work is not lost.</p>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="9">
-<li id="fn9"><p>For users on macOS, you will find the Preferences under the Atom menu.<a href="packages.html#fnref9">↩</a></p></li>
-</ol>
+<div id="opening-pull-requests" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Opening Pull Requests</h3>
+<p>When you have made changes to your branch and want to integrate them into the <code>master</code>, production part of your repository, it is time to open a <strong>pull request</strong>. Below, you will see that a directory named <code>ExtraWork</code> has been added to the <code>SnowAssignments</code> repository’s <code>snowBranch</code>:</p>
+<p><img src="images/branch4.png" width="100%" /></p>
+<p>We have verified that the file is complete and ready for integration into the <code>master</code> branch. To do this, we need to click on the <code>New pull request</code> button just to the right of the <code>Branch</code> button above your repository contents. Make sure that you are opening the pull request on your branch and not on the <code>master</code>!</p>
+<p><img src="images/branch5.png" width="100%" /></p>
+<p>The <strong>pull request</strong> page looks very similar to GitHub’s <strong>Issue</strong> feature - there is a place for a title (which will be autofilled for you) and for describing the contents and signifiance of your changes. You can optionally assign individual reviewers (such as your final project team members). Once you are done, click the green <code>Create pull request</code> button.</p>
 </div>
+<div id="evaluating-pull-requests" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Evaluating Pull Requests</h3>
+<p>When a team member opens a <strong>pull request</strong>, you should see a notification in your news feed on the main landing page when you log into GitHub.com:</p>
+<p><img src="images/branch6.png" width="100%" /></p>
+<p>Clicking on that message (or, alternatively, selecting the <code>Pull Requests</code> tab in any repository) will take you to a page where you can evaluate changes that were made on your colleague’s branch:</p>
+<p><img src="images/branch7.png" width="100%" /></p>
+<p>Here you can: * view files that have been changed or added, * respond to the pull request with a comment if you have follow-up questions, * view the results of GitHub’s conflict check, * and choose an outcome (either merging - i.e. accepting - the pull request or closing - i.e. rejecting - the pull request)</p>
+<p>This is an integral step. It is part of the peer review process that drives open-source software and is conducted in the same spirit of peer review that academics use to evaluate publications. The goal here is provide constructive feedback about proposed additions or changes. If you choose to close (i.e. reject) a pull request, give a detailed explanation as to why you are doing so.</p>
+<p>If you see that there are conflicts with the base (i.e. <code>master</code>) branch, please let Chris know immediately to problem solve before any pull requests are accepted.</p>
+<p>If you want to accept the changes, select the green <code>Merge pull request</code> button. Chosing this button will open up a space for you to add a commit message that corresponds with accepting the pull request:</p>
+<p><img src="images/branch8.png" width="100%" /></p>
+<p>After filling out your commit message and selecting <code>Confirm merge</code>, you have one final opportunity to either roll back the changes (by chosing <code>Revert</code>) or make them permanent by chosing <code>Delete branch</code>.</p>
+
+</div>
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction-to-atom.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="languages.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="even-more-git-lingo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction-to-atom.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
