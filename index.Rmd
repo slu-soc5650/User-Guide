@@ -1,0 +1,56 @@
+---
+title: "SOC 4650/5650 User's Guide"
+author: "Christopher Prener, Ph.D."
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output:
+  bookdown::gitbook:
+    split_by: section
+    config:
+      toc:
+        collapse: section
+        before: |
+          <li><a href="http://slu-soc5650.github.io" target="_blank">SOC 4650/5650: Intro to GISc</a></li>
+        after: |
+          <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+      edit: null
+      download: ["pdf"]
+      sharing:
+        facebook: yes
+        twitter: yes
+        google: no
+        weibo: no
+        instapaper: no
+        vk: no
+        all: null
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: "slu-soc5650/User-Guide"
+description: "This course User's Guide is a companion document for SOC 4650/5650 - Introduction to Geographic Information Sciences."
+---
+
+# Preface {-}
+
+This text is a companion document for **SOC 4650/5650 - Introduction to Geographic Information Sciences**. It is designed to help you be *successful* in this course. The idea behind a course **User's Guide** is to create a reference for many of the intangible, subtle or disparate skills and ideas that contribute to being a successful researcher. In creating a **User's Guide**, I draw inspiration from the work of Donald Knuth.[^1] Knuth has discussed his experiences in designing new software languages, nothing that the developer of a new language
+
+> …must not only be the implementer and the first large-scale user; the designer should also write the first user manual… If I had not participated fully in all these activities, literally hundreds of improvements would never have been made, because I would never have thought of them or perceived why they were important…
+
+While there is nothing particularly new about what I am writing here, and I am certainly not developing a new language for computing, the goal of the **User's Guide** remains similar to Knuth’s experience. By distilling some of key elements for making a successful transition to being a *professional developer* of knowledge rather than a *casual consumer*, I hope to both improve the course experience itself and also create an environment that fosters a successful learning experience for you.
+
+If you read through the course objectives included in the syllabus, you will note that creating maps is only one of them. As much as this is a GIS course, it is a course in research methods. In particular, we are concerned with *high quality* research methods and the *process* of conducting research. We therefore focus on a combination of mental habits and technical practices that make you a successful researcher. Some of the skills and techniques that we will discuss this semester are not taught as often in graduate programs. Instead, they are often the products of "learning the hard way". These "habits of mind and habits of method" are broadly applicable across methodologies and disciplines.
+
+[^1]: [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth) is the developer of [TeX](https://en.wikipedia.org/wiki/TeX), a computer typesetting system that is widely used today for scientific publishing in the form of [LaTeX](https://en.wikipedia.org/wiki/LaTeX). He also established the concept of [literate programming](https://en.wikipedia.org/wiki/Literate_programming), which forms the basis of some of the practices we will follow with Stata this semester.  
+
+## License {-}
+Copyright © 2016-2017 [Christopher G. Prener](http://chrisprener.net)
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
