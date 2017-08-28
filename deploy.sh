@@ -15,7 +15,7 @@ export LC_TIME=en_US.UTF-8
 # GitHub username.
 USERNAME=chris-prener
 # Name of the branch containing the Hugo source files.
-SOURCE=sources
+SOURCE=source
 # The commit message.
 MESSAGE="Book rebuild $(date)"
 

@@ -14,7 +14,7 @@
 USERNAME=chris-prener
 # Name of the branch containing the Hugo source files.
 # Name of the branch containing the Hugo source files.
-SOURCE=sources
+SOURCE=source
 
 msg() {
     printf "\033[1;32m :: %s\n\033[0m" "$1"
